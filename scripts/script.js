@@ -238,7 +238,7 @@ function navHideShow() {
 
 new fullpage('#fullpage', {
 
-	licenseKey: 'A82ACDA6-81874E36-8100F2A7-1F26EC7D'
+	licenseKey: 'A82ACDA6-81874E36-8100F2A7-1F26EC7D',
 
 	// anchors: ['page-about', 'page-landing', 'page-1', 'page-2'],
 	onLeave: function(origin, destination, direction){
