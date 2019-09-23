@@ -277,8 +277,8 @@ $(document).ready(function() {
 
 	numSections = $('.fp-section').length - 1;
 	moveAmt = 100 / (numSections+1);
-	console.log("numSections is " + numSections);
-	console.log("moveAmt is " + moveAmt);
+	// console.log("numSections is " + numSections);
+	// console.log("moveAmt is " + moveAmt);
 
     $(".scroll-hint").removeClass("scroll-hint-hide");
 	scrollTimer = setInterval('scrollAnimate()', 800);
