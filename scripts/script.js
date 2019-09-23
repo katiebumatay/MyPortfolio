@@ -11,11 +11,11 @@ var oldPos = 0; var newPos; var currentPos; var moveAmt;
 var newIndex = 0; var setPos;
 var dragging = false;
 
-const proj1 = "and-justice-for-all.html";
-const proj2 = "glitchin-gifs.html";
-const proj3 = "a-type-of-mosaic.html";
-const proj4 = "metamorph-typeface.html";
-const proj5 = "pleasures-of-the-door.html";
+const proj1 = "and-justice-for-all";
+const proj2 = "glitchin-gifs";
+const proj3 = "a-type-of-mosaic";
+const proj4 = "metamorph-typeface";
+const proj5 = "pleasures-of-the-door";
 var projectLink;
 
 var scrollTimer;
