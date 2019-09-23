@@ -812,3 +812,46 @@ a:hover {
 	line-height: 20pt;
 }*/
 
+/*@media only screen and (orientation: portrait) {*/
+@media only screen and (max-device-width: 530px) and (orientation: portrait) {
+	.heading {
+		font-size: 38pt;
+		line-height: 38pt;
+	}
+
+	.about-container-hide {
+		transform: translateX(calc(100vw - 24pt));
+	}
+
+	.navigation {
+		left:6pt;
+	}
+
+	#about-img {
+		height: 200px;
+		width: 200px;
+	}
+
+	.info-header {
+		font-size: 18pt;
+		line-height: 24pt;
+	}
+
+	#info-row {
+		margin-top: 15vh;
+	}
+	#info-col {
+		margin-bottom: 18pt;
+	}
+	/*.project-type {
+		color: #eb2a2a;
+	}*/
+	.preview-subtitle {
+		display: none;
+	}
+	.preview-title-container .line {
+		display: none;
+	}
+
+}
+
