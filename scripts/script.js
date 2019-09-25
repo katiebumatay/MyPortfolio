@@ -317,7 +317,7 @@ $(document).ready(function() {
 
 	// open project link in new window when user clicks home image
 	$("#img-container").click(function(){
-		window.open(projectLink);
+		window.open(projectLink,"_self");
 	});
 
 	// show and hide preview info when user hovers over preview image
