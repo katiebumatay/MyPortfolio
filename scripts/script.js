@@ -1,16 +1,21 @@
-var oldX = 0;
-var oldY = 0;
-var newX = 0;
-var newY = 0;
+// variables to track mouse movement
+var oldX = 0; var oldY = 0; var newX = 0; var newY = 0;
+
+// variables to choose which project to display
 var proj; var projChoiceClass;
+
+// variables to choose which about picture to display
 var abtPic; var abtPicClass;
-var numSections; var currentSection;
-var prevSection;
-var diff;
+
+// variables for tracking sections
+var numSections; var currentSection; var prevSection;
+
+// variables to control circle dragger movement on navigation bar
 var oldPos = 0; var newPos; var currentPos; var moveAmt;
 var newIndex = 0; var setPos;
 var dragging = false;
 
+// variables for links to project pages
 const proj1 = "and-justice-for-all";
 const proj2 = "glitchin-gifs";
 const proj3 = "a-type-of-mosaic";
@@ -18,107 +23,40 @@ const proj4 = "metamorph-typeface";
 const proj5 = "pleasures-of-the-door";
 var projectLink;
 
+// variable for controlling animation of scroll indicator
 var scrollTimer;
-var scrollTimerOn = false;
 
+// preloader controls - listen for page to finish loading
 var preload = document.getElementById("preload-overlay");
 window.addEventListener('load', function() {
 	preload.className += "preload-hide";
 });
 
-
-
-
-//fullpage
-
-// keeping central set of classnames and selectors
-    var WRAPPER =               'fullpage-wrapper';
-    var WRAPPER_SEL =           '.' + WRAPPER;
-
-    // slimscroll
-    var SCROLLABLE =            'fp-scrollable';
-    var SCROLLABLE_SEL =        '.' + SCROLLABLE;
-
-    // util
-    var RESPONSIVE =            'fp-responsive';
-    var NO_TRANSITION =         'fp-notransition';
-    var DESTROYED =             'fp-destroyed';
-    var ENABLED =               'fp-enabled';
-    var VIEWING_PREFIX =        'fp-viewing';
-    var ACTIVE =                'active';
-    var ACTIVE_SEL =            '.' + ACTIVE;
-    var COMPLETELY =            'fp-completely';
-    var COMPLETELY_SEL =        '.' + COMPLETELY;
-
-    // section
-    var SECTION_DEFAULT_SEL =   '.section';
-    var SECTION =               'fp-section';
-    var SECTION_SEL =           '.' + SECTION;
-    var SECTION_ACTIVE_SEL =    SECTION_SEL + ACTIVE_SEL;
-    var TABLE_CELL =            'fp-tableCell';
-    var TABLE_CELL_SEL =        '.' + TABLE_CELL;
-    var AUTO_HEIGHT =           'fp-auto-height';
-    var AUTO_HEIGHT_SEL =       '.' + AUTO_HEIGHT;
-    var AUTO_HEIGHT_RESPONSIVE = 'fp-auto-height-responsive';
-    var AUTO_HEIGHT_RESPONSIVE_SEL = '.' + AUTO_HEIGHT_RESPONSIVE;
-    var NORMAL_SCROLL =         'fp-normal-scroll';
-    var NORMAL_SCROLL_SEL =     '.' + NORMAL_SCROLL;
-
-    // section nav
-    var SECTION_NAV =           'fp-nav';
-    var SECTION_NAV_SEL =       '#' + SECTION_NAV;
-    var SECTION_NAV_TOOLTIP =   'fp-tooltip';
-    var SECTION_NAV_TOOLTIP_SEL='.'+SECTION_NAV_TOOLTIP;
-    var SHOW_ACTIVE_TOOLTIP =   'fp-show-active';
-
-// https://medium.com/quick-code/simple-javascript-drag-drop-d044d8c5bed5
-// const box = document.getElementsByClassName('test-box')[0]
-// const containers = document.getElementsByClassName('test-container')
-// for(const container of containers) {
-//   container.addEventListener("dragover", dragover)
-//   container.addEventListener("dragenter", dragenter)
-//   container.addEventListener("drop", drop)
-// }
-
-// function dragover(e) {
-//   e.preventDefault();
-// }
-// function dragenter(e) {
-//   e.preventDefault();
-//   if (this.id == "container-1") {
-//   	$.fn.fullpage.moveTo(2);
-//   }
-//   if (this.id == "container-2") {
-//   	$.fn.fullpage.moveTo(3);
-//   }
-//   if (this.id == "container-3") {
-//   	$.fn.fullpage.moveTo(4);
-//   }
-// }
-// function drop() {
-//   this.append(box);
-//   // if (this.id == "container-3") {
-//   // 	$.fn.fullpage.moveTo(4);
-//   // }
-// }
-
-// end of https://medium.com/quick-code/simple-javascript-drag-drop-d044d8c5bed5
-
+// animate scroll indicator
 function scrollAnimate() {
+	console.log("scrollAnimate");
     $(".scroll-hint").toggleClass("scrollBounce");
 }
 
+// randomly select project to display when page loads
 function setProj() {
 		proj = Math.floor(Math.random() * 5) + 1;
 		projChoiceClass = "projects-" + proj;
-		// if (proj == 2) {
-		// 	var micro = Math.floor(Math.random() * 3) + 1;
-		// 	projChoiceClass = projChoiceClass + "-" + micro;
-		// }
     	$("#img-container").addClass(projChoiceClass);
     	setProjLink();
 };
 
+// randomly select project to display when mouse moves more than 40 pixels
+function chooseProj() {
+	if ((newY > (oldY + 40)) || (newY < (oldY - 40)) || (newX > (oldX + 40)) || (newX < (oldX - 40))) {
+		$("#img-container").removeClass(projChoiceClass);
+		setProj();
+    	oldX = newX;
+    	oldY = newY;
+	}
+};
+
+// set link to project based on which cover image is displayed
 function setProjLink() {
 	if (proj == 1) {
 		projectLink = proj1;
@@ -137,23 +75,14 @@ function setProjLink() {
 	}
 }
 
-function chooseProj() {
-	if ((newY > (oldY + 40)) || (newY < (oldY - 40)) || (newX > (oldX + 40)) || (newX < (oldX - 40))) {
-		$("#img-container").removeClass(projChoiceClass);
-		setProj();
-    	oldX = newX;
-    	oldY = newY;
-	}
-};
-
+// randomly select an about picture to display
 function setAbtPic() {
 	abtPic = Math.floor(Math.random() * 14) + 1;
     abtPicClass = "abt-image" + abtPic;
    	$("#about-img").addClass(abtPicClass);
-   	// document.getElementById("about-img").style.background = "url(../about/image" + abtPic + ".jpg) !important";
-   	// $("#about-img").css("background", "url(../about/image" + abtPic + ".jpg) !important");
 }
 
+// display about picture when mouse moves more than 100 pixels
 function chooseAbtPic() {
 	if ((newY > (oldY + 100)) || (newY < (oldY - 100)) || (newX > (oldX + 100)) || (newX < (oldX - 100))) {
 		$("#about-img").removeClass(abtPicClass);
@@ -163,40 +92,26 @@ function chooseAbtPic() {
 	}
 };
 
+// move dragger circle on navigation bar when user scrolls
 function moveDragger() {
-	// newPos = 20 * diff;
-	// currentPos = (newPos + oldPos);
-	// console.log("newPos is " + newPos + " and oldPos is " + oldPos);
-	// console.log("currentPos is " + currentPos);
-	// // $( ".nav-dragger" ).animate({top: (currentPos  + 'px'),}, 500);
-	// document.getElementById("draggerID").style.top = currentPos + 'px';
-	// oldPos = currentPos;
-
 	setPos = (newIndex) * moveAmt;
 	$( ".nav-dragger" ).animate({top: (setPos  + '%'),}, 300);
 	console.log("setPos is " + setPos);
 
 };
 
-function setTrackerText() {
-	if (newIndex > 0) {
-		currentSection = newIndex;
-		$( ".section-tracker" ).text(currentSection + "/" + numSections);
-		// $(".nav-container").removeClass("nav-container-hide");
+// set navigation bar text when sections change -- unused
+// function setTrackerText() {
+// 	if (newIndex > 0) {
+// 		currentSection = newIndex;
+// 		$( ".section-tracker" ).text(currentSection + "/" + numSections);
+// 	}
+// 	else if (newIndex == 0) {
+// 		$( ".section-tracker" ).text( "" );
+// 	}
+// }
 
-	}
-	else if (newIndex == 0) {
-		$( ".section-tracker" ).text( "" );
-		// $(".nav-container").addClass("nav-container-hide");
-	}
-	// else if (newIndex == 0) {
-	// 	$( ".section-tracker" ).text( "about" );
-	// }
-	// else if (newIndex == 1) {
-	// 	$( ".section-tracker" ).text( "home" );
-	// }
-}
-
+// show navigation bar if not on home section  and vice versa
 function navHideShow() {
 	if (newIndex > 0) {
 		$(".nav-container").removeClass("nav-container-hide");
@@ -206,41 +121,9 @@ function navHideShow() {
 	}
 }
 
-// function chooseStory() {
-//     v = Math.floor(Math.random() * numOptions) + 1;
-//     articleLink = "https://katiebumatay.github.io/and-justice-for-all/variables/" + sec + "/" + phraseNum + "/" + v + "/text.html";
-//     $(".articleText").load(articleLink);
-//     captionLink = "https://katiebumatay.github.io/and-justice-for-all/variables/" + sec + "/" + phraseNum + "/" + v + "/text.html p:first-child";
-//     $(".caption").load(captionLink);
-//     i = Math.floor(Math.random() * 2) + 1;
-//     if (viewDesigner == true) {
-//         i = 1;
-//     }
-//     projChoiceClass = "projects-" + proj;
-//     $("#img-container").addClass(imgChoiceClass);
-    
-// }
-
-// new fullpage('#fullpage', {
-//   anchors: ['page-about', 'page-landing', 'page-1', 'page-2'],
-// });
-
-//adding the action to the button
-// $(document).on('click', '#moveTo', function(){
-//   fullpage_api.moveTo('page-2',1);
-// });
-
-// $(function() {
-//     $("#draggable").draggable({ axis: 'x' });
-// });
-
-// $('#fullpage').fullpage();
-
+// setup fullpage functions
 new fullpage('#fullpage', {
-
 	licenseKey: 'A82ACDA6-81874E36-8100F2A7-1F26EC7D',
-
-	// anchors: ['page-about', 'page-landing', 'page-1', 'page-2'],
 	onLeave: function(origin, destination, direction){
 		prevSection = this;
 
@@ -256,45 +139,29 @@ new fullpage('#fullpage', {
     		$(".top-bar").removeClass("top-bar-hide");
 		}
 		if(destination.index == 0)  {
+			scrollTimer = setInterval('scrollAnimate()', 800);
+			$(".scroll-hint").removeClass("scroll-hint-hide");
     		$(".top-bar").addClass("top-bar-hide");
 		}
-
-		// $(".zoom-wrapper").addClass("zoom-out");
-
 	},
 	afterLoad: function(origin, destination, direction){
-		// $(".zoom-wrapper").removeClass("zoom-out");
-		// moveDragger();
-		// if (dragging) {
-		// 	moveDragger();
-		// }
-
 	}
 });
 
-
+// after page loads
 $(document).ready(function() {
 
+	// determine how much the dragger circle moves based on how many sections there are
 	numSections = $('.fp-section').length - 1;
 	moveAmt = 100 / (numSections+1);
-	// console.log("numSections is " + numSections);
-	// console.log("moveAmt is " + moveAmt);
 
+	// activate scroll indicator
     $(".scroll-hint").removeClass("scroll-hint-hide");
 	scrollTimer = setInterval('scrollAnimate()', 800);
 
-
-	// $( ".section-tracker" ).text( "home" );
-	// $( "#bullet-0 a" ).text( "about" );
-	$( "#bullet-0 a span" ).text( "home" );
-
-
-	// $(".nav-container").draggable({ 
-	// });
-
+	// set navigation draggable functions and responses
 	$(".nav-dragger").draggable({ 
 		axis: 'y',
-		// revert: "invalid",
 		zIndex: 100,
 		containment : ".nav-container",
 		drag: function() {},
@@ -302,59 +169,21 @@ $(document).ready(function() {
 		stop: function() {},
 	});
 
+	// set navigation droppable functions and responses
 	$(".nav-bullet").droppable({ 
 		accept: ".nav-dragger",
 		tolerance: "intersect",
 		over: function( event, ui ) {}
 	});
 
-	// $( ".nav-dragger" ).animate({top: (oldPos  + 'px'),}, 0);
-
-	// $(".test-box").draggable({ 
-	// 	axis: 'x',
-	// 	revert: "invalid",
-	// 	zIndex: 100,
-	// 	containment : ".drag-contain",
-	// 	start: function() {},
-	// 	stop: function( event, ui ) {}
-	// });
-
-	// $( ".test-container" ).droppable({
-	// 	accept: ".test-box",
-	// 	tolerance: "intersect",
-	// 	over: function( event, ui ) {}
-	// });
-
-	// $( ".test-box" ).on( "dragstart", function() {
-	// 	$(".zoom-wrapper").addClass("zoom-out");
-	// } );
-
-	// $( ".test-box" ).on( "dragstop", function() {
-	// 	$(".zoom-wrapper").removeClass("zoom-out");
-	// } );
-
-
-	// $( "#container-1" ).on( "dropover", function() {
-	// 	fullpage_api.moveTo(2);
-	// } );
-	// $( "#container-2" ).on( "dropover", function() {
-	// 	fullpage_api.moveTo(3);
-	// } );
-	// $( "#container-3" ).on( "dropover", function() {
-	// 	fullpage_api.moveTo(4);
-	// } );
-
-
+	// set functions when dragging starts
 	$( ".nav-dragger" ).on( "dragstart", function() {
 		$(".zoom-wrapper").addClass("zoom-out");
     	$(".top-bar").addClass("top-bar-hide");
-
-		// $(".nav-dragger").addClass("nav-dragger-active");
 		dragging = true;
-
 	} );
 
-
+	// set functions when dragging is happening
 	$( ".nav-dragger" ).on( "drag", function() {
 		$( "#bullet-0" ).on( "dropover", function() {
 			fullpage_api.moveTo(1);
@@ -377,114 +206,34 @@ $(document).ready(function() {
 		$( "#bullet-6" ).on( "dropover", function() {
 			fullpage_api.moveTo(7);
 		} );
-
 	} );
 
+	// set functions when dragging ends
 	$( ".nav-dragger" ).on( "dragstop", function() {
 		moveDragger();
 		navHideShow();
 		$(".zoom-wrapper").removeClass("zoom-out");
     	$(".top-bar").removeClass("top-bar-hide");
-
-		// $(".nav-dragger").removeClass("nav-dragger-active");
 		dragging = false;
-		// moveDragger();
 	} );
 
-	// $( ".nav-dragger" ).on( "drag", function( event, ui ) {} );
-	// $( ".nav-dragger" ).draggable({
- // 		drag: function( event, ui ) {
- 
- //    	// Keep the left edge of the element
- //    	// at least 100 pixels from the container
- //    	ui.position.top = Math.min( 100, ui.position.top );
- //  	}
-// });
-
-	// var indexBullet = index(closest(this, SECTION_NAV_SEL + ' li'));
- //            scrollPage($(SECTION_SEL)[indexBullet]);
-
- // 	$( ".nav-bullet" ).on( "dropover", function() {
- // 		scrollPage($(".fp-section")[newIndex]);
-	// } );
-
-
-	// $( "#bullet-0" ).on( "dropover", function() {
-	// 	fullpage_api.moveTo(1);
-	// } );
-	// $( "#bullet-1" ).on( "dropover", function() {
-	// 	fullpage_api.moveTo(2);
-	// } );
-	// $( "#bullet-2" ).on( "dropover", function() {
-	// 	fullpage_api.moveTo(3);
-	// } );
-	// $( "#bullet-3" ).on( "dropover", function() {
-	// 	fullpage_api.moveTo(4);
-	// } );
-
-	// $( "#bullet-0" ).click(function() {
-	// 	$(".nav-dragger").removeClass("pos-1 pos-2 pos-3").addClass("pos-0");
-	// } );
-	// $( "#bullet-1" ).click(function() {
-	// 	$(".nav-dragger").removeClass("pos-0 pos-2 pos-3").addClass("pos-1");
-	// } );
-	// $( "#bullet-2" ).click(function() {
-	// 	$(".nav-dragger").removeClass("pos-1 pos-0 pos-3").addClass("pos-2");
-	// } );
-	// $( "#bullet-3" ).click(function() {
-	// 	$(".nav-dragger").removeClass("pos-1 pos-2 pos-0").addClass("pos-3");
-	// } );
-
-	// $( "#container-1" ).click(function() {
-	// 	document.getElementById("myDIV").style.transform = "translateX(0px)";
-	// } );
-	// $( "#container-2" ).click(function() {
-	// 	document.getElementById("myDIV").style.transform = "translateX(50px)";
-	// } );
-	// $( "#container-3" ).click(function() {
-	// 	document.getElementById("myDIV").style.transform = "translateX(100px)";
-	// } );
-
-
-	// $(document).ready(function() {
-	    // $('#fullpage').fullpage();
-	// });
-
-
+	// set project that's displayed initially
 	setProj();
 
-// 	$(function() {
-//     $("#draggable").draggable({ axis: 'x' });
-// });
-
-	// $('.test-box').draggable().filter('.test-box').draggable("option", "axis", "x");
-
-	// $(".button").click(function(){
- //        $(".popup").addClass("popup-show");
- //     });
-
- 	// $("#work-button").click(function(){
-  //       // $.fn.fullpage.moveTo(3);
-
-  //       if (newIndex == 0) {
-  //       	fullpage_api.moveTo(2);
-  //       }
-  //       else return;
-       
-  //    });
-
+	// allow click function of scroll indicator -- to first project
   	$(".scroll-hint").click(function(){
           fullpage_api.moveTo(2);
     });	
 
+  	// go back to landing/home section when user clicks name
     $( "#home-button" ).click(function() {
 			fullpage_api.moveTo(1);
 		} );
 
+    // show about page container when user clicks "about"
  	$("#about-button").click(function(){
  		console.log("clicked about button");
     	$(".about-container").toggleClass("about-container-hide");
-    	// $("#about-img, #info-col, #additional-info-col, #contact-info-col, .contact-info").toggleClass("about-elements-hide");
     	$("#about-img, #info-col, .contact-info").toggleClass("about-elements-hide");
 
     	if ($(".about-container").hasClass("about-container-hide")) {
@@ -495,73 +244,31 @@ $(document).ready(function() {
     		$("#about-button").text("close");
     		fullpage_api.setAllowScrolling(false);
     	}
-    	// $(".zoom-wrapper").toggleClass("stop-scroll");
     });
-    // $(".about-container").click(function(){
-    // 	$(".about-container").toggleClass("about-container-hide");
-    // });
 
+ 	// track mouse movement and change about picture
     $(".about-container").mousemove(function(event){
 		newX = event.pageX;
 		newY = event.pageY;
 		chooseAbtPic();
-  		// console.log(event.pageX + ", " + event.pageY);
 	});
 
-	$(".popup").click(function(){
-        $(".popup").removeClass("popup-show");
-     });
-
+    // track mouse movement inside home image and change project picture
 	$("#img-container").mousemove(function(event){
 		newX = event.pageX;
 		newY = event.pageY;
 		chooseProj();
-  		// console.log(event.pageX + ", " + event.pageY);
 	});
 
+	// open project link in new window when user clicks home image
 	$("#img-container").click(function(){
 		window.open(projectLink);
-		// if (proj == 1) {
-		// 	window.open("projects.html");
-		// }
-		// if (proj == 2) {
-		// 	window.open("projects.html");
-		// }
-		// if (proj == 3) {
-		// 	window.open("projects.html");
-		// }
-		// if (proj == 4) {
-		// 	window.open("projects.html");
-		// }
-		// if (proj == 5) {
-		// 	window.open("projects.html");
-		// }
-		// if (proj == 6) {
-		// 	window.open("projects.html");
-		// }
 	});
 
+	// show and hide preview info when user hovers over preview image
 	$(".preview-img").hover(function(){
         $(".preview-title-container").toggleClass("preview-title-container-show");
         $(".preview-img-overlay").toggleClass("preview-img-overlay-show");
      });
-
-	// $("#img1").hover(function(){
- //        $("#img1").toggleClass("img1-pause");
- //     });
-
-	// $(".test-box").mousedown(function(){
- //        $(".zoom-wrapper").addClass("zoom-out");
- //     });
-
-	// $(".test-box").mouseup(function(){
- //        $(".zoom-wrapper").removeClass("zoom-out");
- //     });
-
-	// $(".test-box").mouseleave(function(){
- //        $(".zoom-wrapper").removeClass("zoom-out");
- //     });
-
-
 
 });

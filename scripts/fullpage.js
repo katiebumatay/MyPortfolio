@@ -1084,9 +1084,7 @@
                 if (options.anchors.length) {
                     link = options.anchors[i];
                 }
-
-                // li += '<li class="nav-bullet" id="bullet-' + i + '"><a href="#' + link + '">' + i + "/" + ($(SECTION_SEL).length-1) + '<span class="fp-sr-only">' + getBulletLinkName(i, 'Section') + '</span><span></span></a>';
-                // li += '<li class="nav-bullet" id="bullet-' + i + '"><a href="#' + link + '"><span>' + i + "/" + ($(SECTION_SEL).length-1) + '</span></a>';
+                
                 li += '<li class="nav-bullet" id="bullet-' + i + '"><a href="#' + link + '"><span></span></a>';
 
 
