@@ -223,7 +223,7 @@ html, body{
 .prev, .next {
   cursor: pointer;
   position: absolute;
-  top: calc(50% - 12pt);
+  top: 0%;
   height: 100%;
   width: 50%;
   font-size: 18pt;
@@ -238,8 +238,8 @@ html, body{
 
 .next {
 	text-align: right;
-  right: 12pt;
-  cursor: e-resize;
+ 	right: 12pt;
+ 	cursor: e-resize;
 }
 
 .prev {
@@ -251,4 +251,17 @@ html, body{
 .prev:hover, .next:hover {
   color: #eb2a2a !important;
   opacity: 1;
+}
+
+.prev a, .next a {
+	position: absolute;
+	top: 50%;
+}
+
+.prev a{
+	left: 0;
+}
+
+.next a{
+	right:0;
 }
