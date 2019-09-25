@@ -21,6 +21,7 @@ const proj2 = "glitchin-gifs";
 const proj3 = "a-type-of-mosaic";
 const proj4 = "metamorph-typeface";
 const proj5 = "pleasures-of-the-door";
+const proj6 = "soulard-farmers-market";
 var projectLink;
 
 // variable for controlling animation of scroll indicator
@@ -40,7 +41,7 @@ function scrollAnimate() {
 
 // randomly select project to display when page loads
 function setProj() {
-		proj = Math.floor(Math.random() * 5) + 1;
+		proj = Math.floor(Math.random() * 6) + 1;
 		projChoiceClass = "projects-" + proj;
     	$("#img-container").addClass(projChoiceClass);
     	setProjLink();
@@ -72,6 +73,9 @@ function setProjLink() {
 	}
 	else if (proj == 5) {
 		projectLink = proj5;
+	}
+	else if (proj == 6) {
+		projectLink = proj6;
 	}
 }
 
