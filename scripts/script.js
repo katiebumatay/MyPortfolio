@@ -1,3 +1,4 @@
+var dest;
 // variables to track mouse movement
 var oldX = 0; var oldY = 0; var newX = 0; var newY = 0;
 
@@ -130,6 +131,7 @@ new fullpage('#fullpage', {
 	licenseKey: 'A82ACDA6-81874E36-8100F2A7-1F26EC7D',
 	onLeave: function(origin, destination, direction){
 		prevSection = this;
+		dest = destination.index;
 
 		newIndex = destination.index;
 		// setTrackerText();
@@ -217,8 +219,10 @@ $(document).ready(function() {
 		moveDragger();
 		navHideShow();
 		$(".zoom-wrapper").removeClass("zoom-out");
-    	$(".top-bar").removeClass("top-bar-hide");
 		dragging = false;
+		if (dest != 0) {
+			$(".top-bar").removeClass("top-bar-hide");
+		}
 	} );
 
 	// set project that's displayed initially
