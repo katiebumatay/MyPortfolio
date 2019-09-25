@@ -1,4 +1,11 @@
-var dest;
+// variables used to turn off tilt in safari
+var is_opera = !!window.opera || navigator.userAgent.indexOf(' OPR/') >= 0;
+var is_Edge = navigator.userAgent.indexOf("Edge") > -1;
+var is_chrome = !!window.chrome && !is_opera && !is_Edge;
+var is_explorer= typeof document !== 'undefined' && !!document.documentMode && !is_Edge;
+var is_firefox = typeof window.InstallTrigger !== 'undefined';
+var is_safari = /^((?!chrome|android).)*safari/i.test(navigator.userAgent);
+
 // variables to track mouse movement
 var oldX = 0; var oldY = 0; var newX = 0; var newY = 0;
 
@@ -13,8 +20,9 @@ var numSections; var currentSection; var prevSection;
 
 // variables to control circle dragger movement on navigation bar
 var oldPos = 0; var newPos; var currentPos; var moveAmt;
-var newIndex = 0; var setPos;
+var oldIndex = 0; var newIndex = 0; var setPos;
 var dragging = false;
+var hasDragged = false;
 
 // variables for links to project pages
 const proj1 = "and-justice-for-all";
@@ -28,15 +36,33 @@ var projectLink;
 // variable for controlling animation of scroll indicator
 var scrollTimer;
 
-// preloader controls - listen for page to finish loading
-var preload = document.getElementById("preload-overlay");
-window.addEventListener('load', function() {
-	preload.className += "preload-hide";
-});
+// check if device is mobile
+var isMobile = false;
+if (window.innerWidth <= 480) {
+	isMobile = true;
+}
+
+// turn off tilt in safari and mobile
+if (is_safari || isMobile) {
+	var imgHome = document.getElementById("img-container");
+	imgHome.className += "no-tilt";
+	var img1 = document.getElementById("img1");
+	img1.className += " no-tilt";
+	var img2 = document.getElementById("img2");
+	img2.className += " no-tilt";
+	var img3 = document.getElementById("img3");
+	img3.className += " no-tilt";
+	var img4 = document.getElementById("img4");
+	img4.className += " no-tilt";
+	var img5 = document.getElementById("img5");
+	img5.className += " no-tilt";
+	var img6 = document.getElementById("img6");
+	img6.className += " no-tilt";
+
+}
 
 // animate scroll indicator
 function scrollAnimate() {
-	console.log("scrollAnimate");
     $(".scroll-hint").toggleClass("scrollBounce");
 }
 
@@ -101,7 +127,6 @@ function chooseAbtPic() {
 function moveDragger() {
 	setPos = (newIndex) * moveAmt;
 	$( ".nav-dragger" ).animate({top: (setPos  + '%'),}, 300);
-	console.log("setPos is " + setPos);
 
 };
 
@@ -118,6 +143,12 @@ function moveDragger() {
 
 // show navigation bar if not on home section  and vice versa
 function navHideShow() {
+	// if user hasn't tried dragging the nav dragger circle, pulse to draw attention
+	if (hasDragged == false && isMobile == false) {
+		if (oldIndex == 0 && newIndex == 1) {
+			$(".nav-dragger").addClass("nav-dragger-animate");
+		}
+	}
 	if (newIndex > 0) {
 		$(".nav-container").removeClass("nav-container-hide");
 	}
@@ -128,12 +159,14 @@ function navHideShow() {
 
 // setup fullpage functions
 new fullpage('#fullpage', {
+	anchors:  ['home', 'and-justice-for-all', 'glitchin-gifs', 'a-type-of-mosaic', 'metamorph-typeface', 'pleasures-of-the-door', 'soulard-farmers-market'],
 	licenseKey: 'A82ACDA6-81874E36-8100F2A7-1F26EC7D',
 	onLeave: function(origin, destination, direction){
 		prevSection = this;
-		dest = destination.index;
-
+		oldIndex = origin.index;
 		newIndex = destination.index;
+		sessionStorage.setItem("currentSection", newIndex + 1);
+		console.log("onLeave sessionStorage currentSection is " + sessionStorage.getItem("currentSection"));
 		// setTrackerText();
 		if (dragging == false) {
 			moveDragger();
@@ -149,10 +182,9 @@ new fullpage('#fullpage', {
 			$(".scroll-hint").removeClass("scroll-hint-hide");
     		$(".top-bar").addClass("top-bar-hide");
 		}
-	},
-	afterLoad: function(origin, destination, direction){
 	}
 });
+	fullpage_api.setRecordHistory(true);
 
 // after page loads
 $(document).ready(function() {
@@ -184,6 +216,10 @@ $(document).ready(function() {
 
 	// set functions when dragging starts
 	$( ".nav-dragger" ).on( "dragstart", function() {
+		if (hasDragged == false && isMobile == false) {
+			hasDragged = true;
+			$(".nav-dragger").removeClass("nav-dragger-animate");
+		}
 		$(".zoom-wrapper").addClass("zoom-out");
     	$(".top-bar").addClass("top-bar-hide");
 		dragging = true;
@@ -220,7 +256,7 @@ $(document).ready(function() {
 		navHideShow();
 		$(".zoom-wrapper").removeClass("zoom-out");
 		dragging = false;
-		if (dest != 0) {
+		if (newIndex != 0) {
 			$(".top-bar").removeClass("top-bar-hide");
 		}
 	} );
@@ -240,7 +276,6 @@ $(document).ready(function() {
 
     // show about page container when user clicks "about"
  	$("#about-button").click(function(){
- 		console.log("clicked about button");
     	$(".about-container").toggleClass("about-container-hide");
     	$("#about-img, #info-col, .contact-info").toggleClass("about-elements-hide");
 
@@ -253,6 +288,18 @@ $(document).ready(function() {
     		fullpage_api.setAllowScrolling(false);
     	}
     });
+
+ 	// close about page when esc key in pressed
+    $(document).on('keydown', function(event) {
+       if (event.key == "Escape") {
+       	if ($(".about-container").hasClass("about-container-hide") == false) {
+       		$(".about-container").toggleClass("about-container-hide");
+    		$("#about-img, #info-col, .contact-info").toggleClass("about-elements-hide");
+    		$("#about-button").text("about");
+    		fullpage_api.setAllowScrolling(true);
+    	}
+       }
+   });
 
  	// track mouse movement and change about picture
     $(".about-container").mousemove(function(event){

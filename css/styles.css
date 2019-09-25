@@ -39,7 +39,10 @@ a:hover {
 }
 
 .load-line {
-	animation: loader 0.7s;
+	-webkit-animation: loader 0.7s; /* Safari 4+ */
+	-moz-animation:    loader 0.7s; /* Fx 5+ */
+	-o-animation:      loader 0.7s; /* Opera 12+ */
+	animation:			loader 0.7s;
 	height: 1px;
 	width: 40px;
 	position: absolute;
@@ -305,12 +308,25 @@ a:hover {
 	z-index: 100;
 	position: absolute;
 	margin-top: -10px;
-	left: -8px;
+	left: -7.5px !important;
 	cursor: row-resize;
 	height: 40px;
 	width: 40px;
 	border-radius: 100%;
 	border: solid #eb2a2a 1px;
+}
+
+@keyframes pulse {
+  0%   { transform: scale(0.8); }
+  50% { transform: scale(1) }
+  100% { transform: scale(0.8) }
+}
+
+.nav-dragger-animate {
+	-webkit-animation: pulse 2s infinite; /* Safari 4+ */
+	-moz-animation:    pulse 2s infinite; /* Fx 5+ */
+	-o-animation:      pulse 2s infinite; /* Opera 12+ */
+	animation:         pulse 2s infinite; /* IE 10+, Fx 29+ */
 }
 
 .nav-line {
@@ -343,9 +359,10 @@ a:hover {
 /*********** home page elements ***********/
 .heading-container {
 	z-index: 10;
-	top: 60pt;
 	left: 15vw;
-	position: relative;
+	position: fixed;
+	width: 50%;
+	top: 35vh;
 	pointer-events: none;
 }
 
@@ -427,6 +444,10 @@ a:hover {
 	background-size: cover !important;
 	background-position: 50% 50% !important;
 	cursor: crosshair;
+}
+
+.no-tilt {
+	transform: none !important;
 }
 
 #img1{background: url(../projects/1/cover.jpg);}
