@@ -263,6 +263,12 @@ a:hover {
 	transition: 0.3s;
 }
 
+.credits {
+	position: absolute;
+	bottom: 20px;
+	left: calc(10% + 12pt);
+}
+
 /*********** top bar "Katie Bumatay" to homepage ***********/
 .top-bar {
 	position: fixed;
@@ -579,7 +585,7 @@ a:hover {
 		margin-top: 15vh;
 	}
 	#info-col {
-		margin-bottom: 18pt;
+		margin-bottom: 16pt;
 	}
 	.preview-subtitle {
 		display: none;
@@ -588,4 +594,11 @@ a:hover {
 		display: none;
 	}
 }
+
+@media screen and (max-width: 840px){
+	#info-row {
+		margin-top: 15vh;
+	}
+}
+
 
