@@ -15,40 +15,40 @@
 </head>
 <body>
 	<!-- top bar with contact and home -->
-	<div class="bar">
+	<nav class="bar">
 		<a href="/#and-justice-for-all" id="home-button">Katie Bumatay</a>
-	</div>
+	</nav>
 	<!-- container for rest of content -->
-	<div class="container">
+	<main class="container">
 		<!-- header info -->
-		<div class="row" id="heading-row">
-			<div class="col project-heading">and justice for all</div>
-		</div>
-		<div class="row" id="subheading-row">
-			<div class="col-12 col-md-6 col-lg-4 project-overview">
-				<div class="overview-heading">Interaction Design</div>
-				<div class="line"></div>
-				<div class="overview-text">
-					<p>A semester-long capstone project that explores the ways in which given variables (including color, size, typeface, image association, and current or historical references) can influence the perception and tone of a presented subject.</p>
-					<p>Designed and developed from scratch, using HTML, CSS, and Javascript. Finished April 2019.</p>
+		<header>
+			<div class="row" id="heading-row">
+				<h1 class="col project-heading">and justice for all</h1>
+			</div>
+			<div class="row" id="subheading-row">
+				<div class="col-12 col-md-6 col-lg-4 project-overview">
+					<h2 class="overview-heading">Interaction Design</h2>
+					<div class="line"></div>
+					<div class="overview-text">
+						<p>A semester-long capstone project that explores the ways in which given variables (including color, size, typeface, image association, and current or historical references) can influence the perception and tone of a presented subject.</p>
+						<p>Designed and developed from scratch, using HTML, CSS, and Javascript. Finished April 2019.</p>
+					</div>
 				</div>
 			</div>
-		</div>
+		</header>
 		<!-- Button to go to published project -->
-		<div class="button">
-		    <a href="https://katiebumatay.github.io/and-justice-for-all/" target="_blank">Published Site</a>	
-		</div>
+		<a class="button button-link" href="https://katiebumatay.github.io/and-justice-for-all/" target="_blank" tabindex="1">Published Site</a>	
 		<!-- Button to go to development process -->
-		<div class="button">
-		    <a href="https://katiebumatay.github.io/CapstoneDevelopment/ViewDev" target="_blank">Development</a>	
-		</div>
+		<a class="button button-link" href="https://katiebumatay.github.io/CapstoneDevelopment/ViewDev" target="_blank" tabindex="2">Development</a>	
 		<!-- The Task section -->
-		<div class="row project-details">
+		<section class="row project-details" id="task">
 		  	<div class="col-12 col-md-4">
 				<div class="line"></div>
 		    	<div class="categories">
-		    		<div class="category-header">The Task</div>
-		    		<div class="category-descirption">Choose a topic and create a capstone project to show off your conceptual and design skills. In other words, this project had no rigid guidelines, and was self-directed with the mentorship of my professor.</div>
+		    		<h3 class="category-header">The Task</h3>
+		    		<div class="category-descirption">
+		    			<p>Choose a topic and create a capstone project to show off your conceptual and design skills. In other words, this project had no rigid guidelines, and was self-directed with the mentorship of my professor.</p>
+		    		</div>
 		    	</div>
 		  	</div>
 			<div class="col-12 col-md-8">
@@ -58,18 +58,22 @@
 		    		</video>
 		    	</div>
 		  	</div>
-		</div>
+		</section>
 		<!-- View/Hide process buttons -->
-		<div class="button button-process"><a>View Process</a></div>
+		<a class="button button-process" tabindex="3">View Process</a>
 		<!-- The Process section -->
-		<div class="row project-details process-hide" id="process">
+		<section class="row project-details process-hide" id="process">
 		  	<div class="col-12 col-md-4">
 				<div class="line"></div>
 		    	<div class="categories">
-		    		<div class="category-header">The Process</div>
-		    		<div class="category-descirption">In the larger scope of things, I started out by picking a topic then trying to build the site around the content. When that was going nowhere, I thought about past projects I really loved working on, and knew I needed to base this on variability.</div>
+		    		<h3 class="category-header">The Process</h3>
+		    		<div class="category-descirption">
+		    			<p>In the larger scope of things, I started out by picking a topic then trying to build the site around the content. When that was going nowhere, I thought about past projects I really loved working on, and knew I needed to base this on variability.</p>
+		    		</div>
 		    	</div>
-		    	<div class="caption-text">I started out with the very basics of getting the code to develop variables of color, font choice, size, and image, using arbitrary content.</div>
+		    	<div class="caption-text">
+		    		<p>I started out with the very basics of getting the code to develop variables of color, font choice, size, and image, using arbitrary content.</p>
+		    	</div>
 		  	</div>
 			<div class="col-12 col-md-8">
 		    	<div class="img">
@@ -109,13 +113,13 @@
 		    	  <div class="next" onclick="plusSlides(1, 0)"><a>&#10095;</a></div>
 		    	</div>
 		  	</div>
-		</div>
+		</section>
 		<!-- The Solution section -->
-		<div class="row project-details">
+		<section class="row project-details" id="solution">
 		  	<div class="col-12 col-md-4">
 				<div class="line"></div>
 		    	<div class="categories">
-		    		<div class="category-header">The Solution</div>
+		    		<h3 class="category-header">The Solution</h3>
 		    		<div class="category-descirption">
 		    			<p>The site programatically formulates new design decisions based on sets of variables, each time a phrase is hovered over. This makes it next to impossible to see the same layout and design more than once.</p>
 		    			<p>The viewer is forced to see the same topic framed in different tones and perspectives, regardless of whether or not it's swayed toward their beliefs</p>
@@ -126,33 +130,31 @@
 			<div class="col-12 col-md-8">
 		    	<div class="img slideshow-container">
 		    	  <div class="mySlides2">
-		    	    <img src="projects/1/final/option1.jpg" width="100%" height="100%">
+		    	    <img src="projects/1/final/option1.jpg" width="100%" height="100%" alt="Rendering of variables in final project (1)">
 		    	  </div>
 		    	  <div class="mySlides2">
-		    	    <img src="projects/1/final/option2.jpg" width="100%" height="100%">
-		    	  </div>
-
-		    	  <div class="mySlides2">
-		    	    <img src="projects/1/final/option3.jpg" width="100%" height="100%">
+		    	    <img src="projects/1/final/option2.jpg" width="100%" height="100%" alt="Rendering of variables in final project (2)">
 		    	  </div>
 		    	  <div class="mySlides2">
-		    	    <img src="projects/1/final/option4.jpg" width="100%" height="100%">
+		    	    <img src="projects/1/final/option3.jpg" width="100%" height="100%" alt="Rendering of variables in final project (3)">
+		    	  </div>
+		    	  <div class="mySlides2">
+		    	    <img src="projects/1/final/option4.jpg" width="100%" height="100%" alt="Rendering of variables in final project (4)">
 		    	  </div>
 		    	  <!-- Next and previous buttons -->
 		    	  <div class="prev" onclick="plusSlides(-1, 1)"><a>&#10094;</a></div>
 		    	  <div class="next" onclick="plusSlides(1, 1)"><a>&#10095;</a></div>
 		    	</div>
 		    	<div class="img">
-		    		 <img src="projects/1/final/img1.jpg" width="100%" height="100%">
+		    		 <img src="projects/1/final/img1.jpg" width="100%" height="100%" alt="Image of presentation set-up">
 		    	</div>
 		    	<div class="img">
-		    		 <img src="projects/1/final/img2.jpg" width="100%" height="100%">
+		    		 <img src="projects/1/final/img2.jpg" width="100%" height="100%" alt="Image of me presenting this project!">
 		    	</div>
 		  	</div>
-		</div>
-		</div>
+		</section>
 		
-	</div>
+	</main>
 	<!-- online jquery -->
 	<script type="text/javascript" src="https://code.jquery.com/jquery-latest.js"></script>
 	<!-- My Javascript -->

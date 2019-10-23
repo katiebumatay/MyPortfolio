@@ -15,36 +15,38 @@
 </head>
 <body>
 	<!-- top bar with contact and home -->
-	<div class="bar">
+	<nav class="bar">
 		<a href="/#a-type-of-mosaic" id="home-button">Katie Bumatay</a>
-	</div>
+	</nav>
 	<!-- container for rest of content -->
-	<div class="container">
+	<main class="container">
 		<!-- header info -->
-		<div class="row" id="heading-row">
-			<div class="col project-heading">A Type of Mosaic</div>
-		</div>
-		<div class="row" id="subheading-row">
-			<div class="col-12 col-md-6 col-lg-4 project-overview">
-				<div class="overview-heading">Micro-Interaction Design</div>
-				<div class="line"></div>
-				<div class="overview-text">
-					<p>Exploration of scrolling in which letterforms pass through neighboring cropped windows, and combine to create abstract forms.</p>
-					<p>Designed and developed from scratch, using HTML, CSS, and Javascript. Finished October 2018.</p>
+		<header>
+			<div class="row" id="heading-row">
+				<h1 class="col project-heading">A Type of Mosaic</h1>
+			</div>
+			<div class="row" id="subheading-row">
+				<div class="col-12 col-md-6 col-lg-4 project-overview">
+					<h2 class="overview-heading">Micro-Interaction Design</h2>
+					<div class="line"></div>
+					<div class="overview-text">
+						<p>Exploration of scrolling in which letterforms pass through neighboring cropped windows, and combine to create abstract forms.</p>
+						<p>Designed and developed from scratch, using HTML, CSS, and Javascript. Finished October 2018.</p>
+					</div>
 				</div>
 			</div>
-		</div>
+		</header>
 		<!-- button to go to published project -->
-		<div class="button">
-		    <a href="https://katiebumatay.github.io/InteractionsFinalProjects/Scrolling/Final" target="_blank">Published Site</a>	
-		</div>
+		    <a class="button button-link" href="https://katiebumatay.github.io/InteractionsFinalProjects/Scrolling/Final" target="_blank" tabindex="1">Published Site</a>	
 		<!-- The Task section -->
-		<div class="row project-details">
+		<section class="row project-details" id="task">
 		  	<div class="col-12 col-md-4">
 				<div class="line"></div>
 		    	<div class="categories">
-		    		<div class="category-header">The Task</div>
-		    		<div class="category-descirption">Create a microsite based on the interaction of scrolling, using skrollr.</div>
+		    		<h3 class="category-header">The Task</h3>
+		    		<div class="category-descirption">
+		    			<p>Create a microsite based on the interaction of scrolling, using skrollr.</p>
+		    		</div>
 		    	</div>
 		  	</div>
 			<div class="col-12 col-md-8">
@@ -54,18 +56,22 @@
 		    		</video>
 		    	</div>
 		  	</div>
-		</div>
+		</section>
 		<!-- View/Hide process button -->
-		<div class="button button-process"><a>View Process</a></div>
+		<a class="button button-process" tabindex="2">View Process</a>
 		<!-- The Process section -->
-		<div class="row project-details process-hide" id="process">
+		<section class="row project-details process-hide" id="process">
 		  	<div class="col-12 col-md-4">
 				<div class="line"></div>
 		    	<div class="categories">
-		    		<div class="category-header">The Process</div>
-		    		<div class="category-descirption">I'd never even heard of skrollr before this project. This project was a learning experience up front, and once I was comfortable manipulating the code, I allowed the project to get more conceptually complex.</div>
+		    		<h3 class="category-header">The Process</h3>
+		    		<div class="category-descirption">
+		    			<p>I'd never even heard of skrollr before this project. This project was a learning experience up front, and once I was comfortable manipulating the code, I allowed the project to get more conceptually complex.</p>
+		    		</div>
 		    	</div>
-		    	<div class="caption-text">This was my experience working with skrollr, simply making objects do things when the user scrolls. I include this to show that this project developed from the VERY basics.</div>
+		    	<div class="caption-text">
+		    		<p>This was my experience working with skrollr, simply making objects do things when the user scrolls. I include this to show that this project developed from the VERY basics.</p>
+		    	</div>
 		  	</div>
 			<div class="col-12 col-md-8">
 		    	<div class="img">
@@ -107,13 +113,13 @@
 		    	  <div class="next" onclick="plusSlides(1, 0)"><a>&#10095;</a></div>
 		    	</div>
 		  	</div>
-		</div>
+		</section>
 		<!-- The Solution Section -->
-		<div class="row project-details">
+		<section class="row project-details" id="solution">
 		  	<div class="col-12 col-md-4">
 				<div class="line"></div>
 		    	<div class="categories">
-		    		<div class="category-header">The Solution</div>
+		    		<h3 class="category-header">The Solution</h3>
 		    		<div class="category-descirption">
 		    			<p>I carefully curated the scrolling pattern of each individual window, so that the user doesn't have an overwhelming amount of control, but they can still manipulate the image on the screen by stopping at different points in the scroll.</p>
 		    			<p>I love the fact that variability makes the user's experience new each time. I added variability of window order, font size, font family, and shade of gray, which changes on each reload so it's never the same, even though the operation of the site is very simple.</p>
@@ -123,43 +129,43 @@
 			<div class="col-12 col-md-8">
 		    	<div class="img slideshow-container">
 		    	  <div class="mySlides2">
-		    	    <img src="projects/3/final/img1.jpg" width="100%" height="100%">
+		    	    <img src="projects/3/final/img1.jpg" width="100%" height="100%" alt="Screen capture of final project (1)">
 		    	  </div>
 		    	  <div class="mySlides2">
-		    	    <img src="projects/3/final/img2.jpg" width="100%" height="100%">
+		    	    <img src="projects/3/final/img2.jpg" width="100%" height="100%" alt="Screen capture of final project (2)">
 		    	  </div>
 
 		    	  <div class="mySlides2">
-		    	    <img src="projects/3/final/img3.jpg" width="100%" height="100%">
+		    	    <img src="projects/3/final/img3.jpg" width="100%" height="100%" alt="Screen capture of final project (3)">
 		    	  </div>
 		    	  <div class="mySlides2">
-		    	    <img src="projects/3/final/img4.jpg" width="100%" height="100%">
+		    	    <img src="projects/3/final/img4.jpg" width="100%" height="100%" alt="Screen capture of final project (4)">
 		    	  </div>
 		    	  <div class="mySlides2">
-		    	    <img src="projects/3/final/img5.jpg" width="100%" height="100%">
+		    	    <img src="projects/3/final/img5.jpg" width="100%" height="100%" alt="Screen capture of final project (5)">
 		    	  </div>
 		    	  <div class="mySlides2">
-		    	    <img src="projects/3/final/img6.jpg" width="100%" height="100%">
+		    	    <img src="projects/3/final/img6.jpg" width="100%" height="100%" alt="Screen capture of final project (6)">
 		    	  </div>
 		    	  <div class="mySlides2">
-		    	    <img src="projects/3/final/img7.jpg" width="100%" height="100%">
+		    	    <img src="projects/3/final/img7.jpg" width="100%" height="100%" alt="Screen capture of final project (7)">
 		    	  </div>
 		    	  <div class="mySlides2">
-		    	    <img src="projects/3/final/img8.jpg" width="100%" height="100%">
+		    	    <img src="projects/3/final/img8.jpg" width="100%" height="100%" alt="Screen capture of final project (8)">
 		    	  </div>
 		    	  <div class="mySlides2">
-		    	    <img src="projects/3/final/img9.jpg" width="100%" height="100%">
+		    	    <img src="projects/3/final/img9.jpg" width="100%" height="100%" alt="Screen capture of final project (9)">
 		    	  </div>
 		    	  <div class="mySlides2">
-		    	    <img src="projects/3/final/img10.jpg" width="100%" height="100%">
+		    	    <img src="projects/3/final/img10.jpg" width="100%" height="100%" alt="Screen capture of final project (10)">
 		    	  </div>
 		    	  <!-- Next and previous buttons -->
 		    	  <div class="prev" onclick="plusSlides(-1, 1)"><a>&#10094;</a></div>
 		    	  <div class="next" onclick="plusSlides(1, 1)"><a>&#10095;</a></div>
 		    	</div>
 		  	</div>
-		</div>
-	</div>
+		</section>
+	</main>
 
 	<!-- online jquery -->
 	<script type="text/javascript" src="https://code.jquery.com/jquery-latest.js"></script>

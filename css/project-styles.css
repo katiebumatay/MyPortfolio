@@ -6,6 +6,11 @@ html, body{
 	background-color: #f0f0f0;
 }
 
+h1, h2, h3 {
+	margin: 0;
+}
+
+
 /*********** top bar with contact and home buttons ***********/
 .bar {
 	position: fixed;
@@ -40,6 +45,7 @@ html, body{
 }
 
 /*********** heading elements ***********/
+
 #heading-row {
 	display: block;
 }
@@ -133,47 +139,40 @@ html, body{
 
 .button {
 	position: relative;
-	padding: 2pt 4pt 3pt 4pt; 
 	display: inline;
-	border: 1px solid #eb2a2a;
 	top: -20px;
 	border-radius: 2pt;
-	transition: 0.2s;
+	padding: 3pt 4pt 3pt 4pt; 
 	margin-right: 10px;
-	cursor: crosshair;
-}
-
-.button:hover {
-	background-color: #eb2a2a;
-	transition: 0.3s;
-}
-
-.button a {
-	color: #eb2a2a;
 	font-size: 10pt;
 	text-decoration: none;
 	text-align: center;
 	cursor: crosshair;
+	transition: 0.2s;
 }
 
-.button:hover a {
-	color: #f0f0f0;
+.button:hover {
 	text-decoration: none;
+	transition: 0.3s;
+}
+
+.button-link {
+	color: #eb2a2a;
+	border: 1px solid #eb2a2a;
+}
+
+.button-link:hover {
+	background-color: #eb2a2a;
+	color: #f0f0f0;
 }
 
 .button-process {
 	border: 1px solid #101010;
-}
-
-.button-process a {
-	color: #101010 !important;
+	color: #101010;
 }
 
 .button-process:hover {
-	background-color: #101010 !important;
-}
-
-.button-process:hover a{
+	background-color: #101010;
 	color: #f0f0f0 !important;
 }
 

@@ -15,36 +15,38 @@
 </head>
 <body>
 	<!-- top contact and home bar -->
-	<div class="bar">
+	<nav class="bar">
 		<a href="/#metamorph-typeface" id="home-button">Katie Bumatay</a>
-	</div>
+	</nav>
 	<!-- container for rest of content -->
-	<div class="container">
+	<main class="container">
 		<!-- header info -->
-		<div class="row" id="heading-row">
-			<div class="col project-heading">Metamorph Typeface</div>
-		</div>
-		<div class="row" id="subheading-row">
-			<div class="col-12 col-md-6 col-lg-4 project-overview">
-				<div class="overview-heading">Micro-Interaction Design</div>
-				<div class="line"></div>
-				<div class="overview-text">
-					<p>A custom designed and coded variable typeface that serves as a the basis for experimenting with the interaction of mouse events.</p>
-					<p>Designed and developed from scratch, using HTML, CSS, and Javascript. Finished September 2018.</p>
+		<header>
+			<div class="row" id="heading-row">
+				<h1 class="col project-heading">Metamorph Typeface</h1>
+			</div>
+			<div class="row" id="subheading-row">
+				<div class="col-12 col-md-6 col-lg-4 project-overview">
+					<h2 class="overview-heading">Micro-Interaction Design</h2>
+					<div class="line"></div>
+					<div class="overview-text">
+						<p>A custom designed and coded variable typeface that serves as a the basis for experimenting with the interaction of mouse events.</p>
+						<p>Designed and developed from scratch, using HTML, CSS, and Javascript. Finished September 2018.</p>
+					</div>
 				</div>
 			</div>
-		</div>
+		</header>
 		<!-- Button to view published site -->
-		<div class="button">
-		    <a href="https://katiebumatay.github.io/InteractionsFinalProjects/Typeface/Final" target="_blank">Published Site</a>	
-		</div>
+		<a class="button button-link" href="https://katiebumatay.github.io/InteractionsFinalProjects/Typeface/Final" target="_blank" tabindex="1">Published Site</a>	
 		<!-- The Task section -->
-		<div class="row project-details">
+		<section class="row project-details" id="task">
 		  	<div class="col-12 col-md-4">
 				<div class="line"></div>
 		    	<div class="categories">
-		    		<div class="category-header">The Task</div>
-		    		<div class="category-descirption">Design and develop an interactive typeface, and create a microsite for the typeface that revolves around the interaction of mouse events.</div>
+		    		<h3 class="category-header">The Task</h3>
+		    		<div class="category-descirption">
+		    			<p>Design and develop an interactive typeface, and create a microsite for the typeface that revolves around the interaction of mouse events.</p>
+		    		</div>
 		    	</div>
 		  	</div>
 			<div class="col-12 col-md-8">
@@ -54,14 +56,14 @@
 		    		</video>
 		    	</div>
 		  	</div>
-		</div>
+		</section>
 		<!-- lacking content for process section -->
 		<!-- The Solution section -->
-		<div class="row project-details">
+		<section class="row project-details" id="solution">
 		  	<div class="col-12 col-md-4">
 				<div class="line"></div>
 		    	<div class="categories">
-		    		<div class="category-header">The Solution</div>
+		    		<h3 class="category-header">The Solution</h3>
 		    		<div class="category-descirption">
 		    			<p>Each letterform is constructed of multiple bars, which change to a new variable width or height when hovered over or clicked on, or when the body of the page is double clicked.</p>
 		    			<p>Like all my work that incorporates variability, the user can explore the page and play with the elements which are contstantly changing the experience so it's not exactly the same twice.</p>
@@ -70,13 +72,12 @@
 		  	</div>
 			<div class="col-12 col-md-8">
 		    	<div class="img">
-		    		<img src="projects/4/final/img1.jpg" width="100%" height="100%"></img>
+		    		<img src="projects/4/final/img1.jpg" width="100%" height="100%" alt="Screen capture of title view in final project"></img>
 		    	</div>
 		  	</div>
-		</div>
-		</div>
+		</section>
 		
-	</div>
+	</main>
 
 	<!-- online jquery -->
 	<script type="text/javascript" src="https://code.jquery.com/jquery-latest.js"></script>
