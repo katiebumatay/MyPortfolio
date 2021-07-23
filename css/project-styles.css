@@ -1,193 +1,26 @@
-html, body{
-	margin: 30px 0 0 0;
-	padding: 0; 
-	cursor: default;\
-	color: #101010;
-	background-color: #f0f0f0;
+
+/*********** Remove grid border styles on project pages ***********/
+
+.left-head-container > ul {
+	border: none;
 }
 
-h1, h2, h3 {
-	margin: 0;
+hr.long {
+	margin-bottom: 12px;
 }
 
-
-/*********** top bar with contact and home buttons ***********/
-.bar {
-	position: fixed;
-	top: 0;
-	left: 0;
-	height: 40px;
-	background-color: #f0f0f0;
-	width: 100vw;
-	z-index: 100;
-	margin:0;
-	font-size: 12pt;
-	line-height: 10pt;
-	font-family: "PT Serif", sans-serif;
-	font-weight: 700;
-	letter-spacing: 0.02;
-	right:30px;
+h1, h2, h3, h4{
+	border: none;
 }
 
-.bar a {
-	float: right;
-	margin-right: 30px;
-	margin-top: 10px;
-	color: #bbb;
-	transition: 0.2s;
+p {
+	border: none;
 }
 
-.bar a:hover{
-	color: #eb2a2a;
-	text-decoration: none;
-	cursor: crosshair;
-	transition: 0.3s;
+.left-intro-container > ul {
+  border: none;
 }
 
-/*********** heading elements ***********/
-
-#heading-row {
-	display: block;
-}
-
-.project-overview {
-	margin-bottom: 36pt;
-}
-
-.project-heading {
-	font-size: 24pt;
-	font-family: 'PT Serif', serif;
-	font-weight: 700;
-	line-height: 24pt;
-	letter-spacing: 0.015em;
-}
-
-.overview-heading {
-	text-transform: uppercase;
-	padding: 8pt 0pt 8pt 0pt;
-	font-size: 10pt;
-	font-family: 'PT Sans Caption', sans-serif;
-	font-weight: 400;
-	line-height: 14pt;
-	letter-spacing: 0.4em;
-	margin-bottom: 1pt;
-}
-
-.overview-text {
-	font-size: 10pt;
-	font-family: 'PT Sans Caption', sans-serif;
-	font-weight: 400;
-	line-height: 14pt;
-	margin-top: 5pt;
-}
-
-#subheading-row .line {
-	border-color: #101010;
-}
-
-/*********** styles for sections of task/process/solution ***********/
-.categories {
-	font-size: 10pt;
-	font-family: 'PT Sans Caption', sans-serif;
-	font-weight: 400;
-	line-height: 14pt;
-	margin-bottom: 14pt;
-	margin-top: 0;
-	display: inline-block;
-	vertical-align: top;
-}
-
-.category-header {
-	font-family: 'PT Serif', serif;
-	font-size: 11pt;
-	font-weight: 700;
-	line-height: 20pt;
-}
-
-.spacer {
-	height: 48pt;
-}
-
-.project-details {
-	margin-bottom: 24pt;
-}
-
-.line {
-	width: 36pt;
-	margin-bottom: 6pt;
-	border-top: 1px solid #eb2a2a;
-}
-
-.caption-text {
-	font-size: 10pt;
-	font-family: 'PT Sans Caption', sans-serif;
-	font-weight: 400;
-	line-height: 14pt;
-	font-style: italic;
-	width: 70%;
-	float: right;
-	margin-bottom: 14pt;
-
-}
-
-.img {
-	height: auto;
-	margin-bottom: 20px !important;
-	position: relative;
-}
-
-
-.button {
-	position: relative;
-	display: inline;
-	top: -20px;
-	border-radius: 2pt;
-	padding: 3pt 4pt 3pt 4pt; 
-	margin-right: 10px;
-	font-size: 10pt;
-	text-decoration: none;
-	text-align: center;
-	cursor: crosshair;
-	transition: 0.2s;
-}
-
-.button:hover {
-	text-decoration: none;
-	transition: 0.3s;
-}
-
-.button-link {
-	color: #eb2a2a;
-	border: 1px solid #eb2a2a;
-}
-
-.button-link:hover {
-	background-color: #eb2a2a;
-	color: #f0f0f0;
-}
-
-.button-process {
-	border: 1px solid #101010;
-	color: #101010;
-}
-
-.button-process:hover {
-	background-color: #101010;
-	color: #f0f0f0 !important;
-}
-
-.process-container {
-	height: 1000px;
-	width: 100%;
-	background-color: red;
-	position: absolute;
-	margin-top: 0;
-	transition: 0.8s;
-}
-
-.process-hide {
-	display: none;
-}
 
 /*********** slideshow elements ***********/
 

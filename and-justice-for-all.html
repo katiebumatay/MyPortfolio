@@ -3,164 +3,116 @@
 
 <head>
 	<title>and justice for all</title>
+	<link rel="shortcut icon" type="image/png" href="favicon.png"/>
 	<!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-	<!-- Bootstrap CSS -->
-	<link rel="stylesheet" href="css/bootstrap.min.css">
 	<!-- My CSS -->
+	<link rel="stylesheet" href="css/styles.css"/>
 	<link rel="stylesheet" href="css/project-styles.css"/>
 	<!-- Google Fonts -->
-	<link href="https://fonts.googleapis.com/css?family=PT+Mono|PT+Sans+Caption:400,700|PT+Sans:400,400i,700,700i|PT+Serif+Caption:400,400i|PT+Serif:400,400i,700,700i&display=swap" rel="stylesheet">
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@300;400&family=Kanit:wght@100;200;300;400;500&family=Source+Code+Pro:wght@300;400&family=Source+Sans+Pro:ital,wght@0,300;0,400;1,300;1,400&display=swap" rel="stylesheet">
 </head>
 <body>
-	<!-- top bar with contact and home -->
-	<nav class="bar">
-		<a href="/#and-justice-for-all" id="home-button">Katie Bumatay</a>
-	</nav>
-	<!-- container for rest of content -->
-	<main class="container">
-		<!-- header info -->
-		<header>
-			<div class="row" id="heading-row">
-				<h1 class="col project-heading">and justice for all</h1>
+	<!-- top bar with "Katie Bumatay" button to home -->
+	<nav class="top-bar" id="navbar">
+		<div class="nav-content">
+			<div id="home-button">
+				<a href="./">
+					<img id="logo" src="KB.svg">
+					Katie Bumatay
+				</a>
 			</div>
-			<div class="row" id="subheading-row">
-				<div class="col-12 col-md-6 col-lg-4 project-overview">
-					<h2 class="overview-heading">Interaction Design</h2>
-					<div class="line"></div>
-					<div class="overview-text">
-						<p>A semester-long capstone project that explores the ways in which given variables (including color, size, typeface, image association, and current or historical references) can influence the perception and tone of a presented subject.</p>
-						<p>Designed and developed from scratch, using HTML, CSS, and Javascript. Finished April 2019.</p>
+			<div class="navigation">
+				<ul>
+					<li><a href="./#and-justice-for-all">Projects</a></li>
+					<li><a href="about">About</a></li>
+				</ul>
+			</div>
+			
+		</div>
+	</nav>
+
+	<!-- MAIN -->
+	<main>
+
+		<!-- Category Section: Intro -->
+		<section>
+			<div class="asymmetric-2col">
+				<!-- <div class="bg-div-horiz"></div> -->
+				<div class="left-intro-container">
+					<h2>and justice for all</h2>
+					<h4>Interaction Design</h4>
+					<hr>
+					<div class="spacer"></div>
+					<p>A semester-long capstone project that explores the ways in which given variables (including color, size, typeface, image association, and current or historical references) can influence the perception and tone of a presented subject.</p>
+					<p>Designed and developed from scratch, using HTML, CSS, and Javascript. Finished April 2019.</p>
+					<ul class="horiz-list">
+						<li><a href="https://katiebumatay.github.io/and-justice-for-all/" target="blank">Published Site</a><li>
+						<li><a href="https://katiebumatay.github.io/CapstoneDevelopment/ViewDev/" target="blank">Development</a><li>
+					</ul>
+				</div>
+				<div class="project-container">
+					<div class="img-container">
+						<img src="projects/1/cover.jpg" alt="and justice for all project cover">
 					</div>
 				</div>
 			</div>
-		</header>
-		<!-- Button to go to published project -->
-		<a class="button button-link" href="https://katiebumatay.github.io/and-justice-for-all/" target="_blank" tabindex="1">Published Site</a>	
-		<!-- Button to go to development process -->
-		<a class="button button-link" href="https://katiebumatay.github.io/CapstoneDevelopment/ViewDev" target="_blank" tabindex="2">Development</a>	
-		<!-- The Task section -->
-		<section class="row project-details" id="task">
-		  	<div class="col-12 col-md-4">
-				<div class="line"></div>
-		    	<div class="categories">
-		    		<h3 class="category-header">The Task</h3>
-		    		<div class="category-descirption">
-		    			<p>Choose a topic and create a capstone project to show off your conceptual and design skills. In other words, this project had no rigid guidelines, and was self-directed with the mentorship of my professor.</p>
-		    		</div>
-		    	</div>
-		  	</div>
-			<div class="col-12 col-md-8">
-		    	<div class="img">
-		    		<video width="100%" height="100%" controls>
+		</section>
+
+		<section>
+			<div class="asymmetric-2col">
+				<!-- <div class="bg-div-horiz"></div> -->
+				<div class="left-intro-container">
+					<hr class="long">
+					<!-- <div class="spacer-sm"></div> -->
+					<h4>The Challenge</h4>
+					<p>Choose a topic and create a capstone project to show off your conceptual and design skills. In other words, this project had no rigid guidelines, and was self-directed with the mentorship of my professor.</p>
+		    		<div class="spacer-md"></div>
+					<hr class="long">
+					<!-- <div class="spacer-sm"></div> -->
+					<h4>The Product</h4>
+					<p>The site programatically formulates new design decisions based on sets of variables, each time a phrase is hovered over. This makes it next to impossible to see the same layout and design more than once.</p>
+		    		<p>The viewer is forced to see the same topic framed in different tones and perspectives, regardless of whether or not it's swayed toward their beliefs</p>
+		    		<p>I'm proud of the way that the concept of variability laid the foundation for the project, and that the design decisions were rooted in this concept.</p>
+				</div>
+				<div class="project-container">
+					<video width="100%" controls>
 		    		  <source src="projects/1/final/recording.mov" type="video/mp4">
 		    		</video>
-		    	</div>
-		  	</div>
-		</section>
-		<!-- View/Hide process buttons -->
-		<a class="button button-process" tabindex="3">View Process</a>
-		<!-- The Process section -->
-		<section class="row project-details process-hide" id="process">
-		  	<div class="col-12 col-md-4">
-				<div class="line"></div>
-		    	<div class="categories">
-		    		<h3 class="category-header">The Process</h3>
-		    		<div class="category-descirption">
-		    			<p>In the larger scope of things, I started out by picking a topic then trying to build the site around the content. When that was going nowhere, I thought about past projects I really loved working on, and knew I needed to base this on variability.</p>
+		    		<div class="spacer-md"></div>
+		    		<div class="slideshow-container">
+		    		  <div class="mySlides1">
+		    		    <img src="projects/1/final/option1.jpg" width="100%" height="100%" alt="Rendering of variables in final project (1)">
+		    		  </div>
+		    		  <div class="mySlides1">
+		    		    <img src="projects/1/final/option2.jpg" width="100%" height="100%" alt="Rendering of variables in final project (2)">
+		    		  </div>
+		    		  <div class="mySlides1">
+		    		    <img src="projects/1/final/option3.jpg" width="100%" height="100%" alt="Rendering of variables in final project (3)">
+		    		  </div>
+		    		  <div class="mySlides1">
+		    		    <img src="projects/1/final/option4.jpg" width="100%" height="100%" alt="Rendering of variables in final project (4)">
+		    		  </div>
+		    		  <!-- Next and previous buttons -->
+		    		  <div class="prev" onclick="plusSlides(-1, 0)"></div>
+		    		  <div class="next" onclick="plusSlides(1, 0)"></div>
 		    		</div>
-		    	</div>
-		    	<div class="caption-text">
-		    		<p>I started out with the very basics of getting the code to develop variables of color, font choice, size, and image, using arbitrary content.</p>
-		    	</div>
-		  	</div>
-			<div class="col-12 col-md-8">
-		    	<div class="img">
-		    		<video width="100%" height="100%" controls>
-		    		  <source src="projects/1/process1/recording1.mov" type="video/mp4">
-		    		</video>
-		    	</div>
-		  	</div>
-		  	<div class="col-12 col-md-4">
-		    	<div class="caption-text">
-		    		<p>A visual summary of the development process, gradually piecing together the functionality and design of the main site (up until before the final iteration).</p>
-		    	</div>
-		  	</div>
-			<div class="col-12 col-md-8">
-		    	<div class="img slideshow-container">
-		    		<div class="mySlides1">
-		    	    <video width="100%" height="100%" controls>
-		    		  <source src="projects/1/process1/recording2.mov" type="video/mp4">
-		    		</video>
-		    	  </div>
-		    	  <div class="mySlides1">
-		    	    <video width="100%" height="100%" controls>
-		    		  <source src="projects/1/process1/recording3.mov" type="video/mp4">
-		    		</video>
-		    	  </div>
-		    	  <div class="mySlides1">
-		    	    <video width="100%" height="100%" controls>
-		    		  <source src="projects/1/process1/recording4.mov" type="video/mp4">
-		    		</video>
-		    	  </div>
-		    	  <div class="mySlides1">
-		    	    <video width="100%" height="100%" controls>
-		    		  <source src="projects/1/process1/recording5.mov" type="video/mp4">
-		    		</video>
-		    	  </div>
-		    	  <div class="prev" onclick="plusSlides(-1, 0)"><a>&#10094;</a></div>
-		    	  <div class="next" onclick="plusSlides(1, 0)"><a>&#10095;</a></div>
-		    	</div>
-		  	</div>
+		    		<div class="spacer-md"></div>
+		    		<img src="projects/1/final/img2.jpg" width="100%" height="100%" alt="Image of me presenting this project!">
+				</div>
+			</div>
 		</section>
-		<!-- The Solution section -->
-		<section class="row project-details" id="solution">
-		  	<div class="col-12 col-md-4">
-				<div class="line"></div>
-		    	<div class="categories">
-		    		<h3 class="category-header">The Solution</h3>
-		    		<div class="category-descirption">
-		    			<p>The site programatically formulates new design decisions based on sets of variables, each time a phrase is hovered over. This makes it next to impossible to see the same layout and design more than once.</p>
-		    			<p>The viewer is forced to see the same topic framed in different tones and perspectives, regardless of whether or not it's swayed toward their beliefs</p>
-		    			<p>I'm proud of the way that the concept of variability laid the foundation for the project, and that the design decisions were rooted in this concept.</p>
-		    		</div>
-		    	</div>
-		  	</div>
-			<div class="col-12 col-md-8">
-		    	<div class="img slideshow-container">
-		    	  <div class="mySlides2">
-		    	    <img src="projects/1/final/option1.jpg" width="100%" height="100%" alt="Rendering of variables in final project (1)">
-		    	  </div>
-		    	  <div class="mySlides2">
-		    	    <img src="projects/1/final/option2.jpg" width="100%" height="100%" alt="Rendering of variables in final project (2)">
-		    	  </div>
-		    	  <div class="mySlides2">
-		    	    <img src="projects/1/final/option3.jpg" width="100%" height="100%" alt="Rendering of variables in final project (3)">
-		    	  </div>
-		    	  <div class="mySlides2">
-		    	    <img src="projects/1/final/option4.jpg" width="100%" height="100%" alt="Rendering of variables in final project (4)">
-		    	  </div>
-		    	  <!-- Next and previous buttons -->
-		    	  <div class="prev" onclick="plusSlides(-1, 1)"><a>&#10094;</a></div>
-		    	  <div class="next" onclick="plusSlides(1, 1)"><a>&#10095;</a></div>
-		    	</div>
-		    	<div class="img">
-		    		 <img src="projects/1/final/img1.jpg" width="100%" height="100%" alt="Image of presentation set-up">
-		    	</div>
-		    	<div class="img">
-		    		 <img src="projects/1/final/img2.jpg" width="100%" height="100%" alt="Image of me presenting this project!">
-		    	</div>
-		  	</div>
-		</section>
-		
+
+
 	</main>
+
 	<!-- online jquery -->
 	<script type="text/javascript" src="https://code.jquery.com/jquery-latest.js"></script>
 	<!-- My Javascript -->
 	<script src="scripts/project-script.js"></script>
-	<!-- Bootstrap Javascript -->
-	<script type="text/javascript" src="scripts/bootstrap.min.js"></script>
 
 </body>
 
