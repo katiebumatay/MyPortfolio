@@ -1,26 +1,48 @@
+:root {
+	--main-dark-color: #343A46;
+	--main-bg-color: #fefefe;
+	--color-mid: #728097;
+	--light-color: #a2abba;
+	--light-color-rgba: rgba(162, 171, 186, 0.3);
+	--accent-color-blue: #007bff;
 
-/*********** Remove grid border styles on project pages ***********/
+	--text-soleil: 'Soleil', sans-serif;
+	--text-normalidad-c: 'normalidad-compact', 'Soleil', sans-serif;
+	--text-normalidad-w: 'normalidad-wide', 'Soleil', sans-serif;
+	--text-normalidad-t: 'normalidad-text', 'Soleil', sans-serif;
+	--text-cormorant: 'Cormorant', serif;
 
-.left-head-container > ul {
-	border: none;
 }
 
-hr.long {
-	margin-bottom: 12px;
+/*********** Remove load animations ***********/
+
+.left-intro-container {
+	animation: none;
 }
 
-h1, h2, h3, h4{
-	border: none;
+.top-bar {
+  animation: none;
+  background-color: var(--main-bg-color);
 }
 
-p {
-	border: none;
-}
+/*********** Images ***********/
 
-.left-intro-container > ul {
+.project-container {
   border: none;
+  padding: 0 40px;
 }
 
+.img-container {
+  opacity: 1;
+	position: static;
+	width: 100%;
+  height: 100%;
+	display: block;
+}
+
+.project-container:hover .img-container {
+	animation: none;
+}
 
 /*********** slideshow elements ***********/
 
@@ -98,4 +120,16 @@ p {
 
 .next a{
 	right:0;
+}
+
+/********* screen <481px ***********/
+@media only screen and (max-width: 481px){
+
+  .left-intro-container {
+		padding-left: 0;
+	}
+
+  h4 {
+		margin-bottom: 12px;
+	}
 }

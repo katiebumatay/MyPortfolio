@@ -30,11 +30,11 @@ if (window.innerWidth <= 480) {
 // randomly select project to display when page loads
 function setProj() {
 		proj = Math.floor(Math.random() * 5) + 1;
-		projChoice = "projects/" + proj + "/cover.jpg";
+		projChoice = "projects/" + proj + "/cover-bw.jpg";
 		setProjLink();
     	$("#proj-img-switch").attr("src", projChoice);
     	$("#tooltip-switch").text(projectLink);
-    	// console.log("setProj() ran and project choice is " + projChoice);
+    	console.log("setProj() ran and project choice is " + projChoice);
 };
 
 // randomly select project to display when mouse moves more than 40 pixels
@@ -86,21 +86,36 @@ function chooseAbtPic() {
 	}
 };
 
+function animatePageLoad() {
+	$(".hero-header, .hero-header-2nd, .top-bar").removeClass("shift");
+	// $(".hero-header-2nd").removeClass("shift");
+}
+
+//scroll to top
+function topFunction() {
+	document.body.scrollTop = 0; // For Safari
+	document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
+  }
+
 // after page loads
 $(document).ready(function() {
 
-	//show and hide nav bar on scroll
-	//from https://www.w3schools.com/howto/howto_js_navbar_hide_scroll.asp
 	var prevScrollpos = window.pageYOffset;
 	window.onscroll = function() {
-	var currentScrollPos = window.pageYOffset;
-	  if (prevScrollpos > currentScrollPos) {
-	    document.getElementById("navbar").style.top = "0";
-	  } else {
-	    document.getElementById("navbar").style.top = "-49px";
-	  }
-	  prevScrollpos = currentScrollPos;
-	}
+		var currentScrollPos = window.pageYOffset;
+		  if (window.pageYOffset != 0) {
+			document.getElementById("navbar").style.backgroundColor = "var(--main-bg-color)";
+			document.getElementById("proj-img-switch").style.opacity = "0";
+			document.getElementById("body").style.backgroundColor = "var(--main-bg-color)";
+		  } 
+		  else {
+			document.getElementById("navbar").style.backgroundColor = "transparent";
+			document.getElementById("proj-img-switch").style.opacity = "1";
+		  }
+		  prevScrollpos = currentScrollPos;
+		}
+
+	window.setTimeout(animatePageLoad, 300);
 
 
  	// track mouse movement and change about picture
@@ -108,6 +123,7 @@ $(document).ready(function() {
 		newX = event.pageX;
 		newY = event.pageY;
 		chooseAbtPic();
+		// setAbtPic();
 	});
 
     // track mouse movement inside home image and change project picture
@@ -116,16 +132,6 @@ $(document).ready(function() {
 		newY = event.pageY;
 		chooseProj();
 	});
-
-	// open project link in new window when user clicks home image
-	$(".proj-img-switch-container").click(function(){
-		window.open(projectLink,"_self");
-	});
-
-	// show and hide preview info when user hovers over preview image
-	$(".preview-img").hover(function(){
-        $(".preview-title-container").toggleClass("preview-title-container-show");
-        $(".preview-img-overlay").toggleClass("preview-img-overlay-show");
-     });
+	 
 
 });

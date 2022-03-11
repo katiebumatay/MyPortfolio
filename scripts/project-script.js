@@ -59,30 +59,4 @@ function showSlides(n, no) {
 
 $(document).ready(function() {
 
-  //show and hide nav bar on scroll
-  //from https://www.w3schools.com/howto/howto_js_navbar_hide_scroll.asp
-  var prevScrollpos = window.pageYOffset;
-  window.onscroll = function() {
-  var currentScrollPos = window.pageYOffset;
-    if (prevScrollpos > currentScrollPos) {
-      document.getElementById("navbar").style.top = "0";
-    } else {
-      document.getElementById("navbar").style.top = "-49px";
-    }
-    prevScrollpos = currentScrollPos;
-  }
-
-  // show and hide The Process section when user clicks button
-	$(".button-process").click(function(){
-        $("#process").toggleClass("process-hide");
-        if (showProcess == false) {
-          $(".button-process a").text("Hide Process");
-          showProcess = true;
-        }
-        else if (showProcess == true) {
-          $(".button-process a").text("View Process");
-          showProcess = false;
-        }
-     });
-
 });

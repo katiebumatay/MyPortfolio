@@ -13,244 +13,220 @@
 	<!-- Google Fonts -->
 	<link rel="preconnect" href="https://fonts.googleapis.com">
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-	<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@300;400&family=Epilogue:wght@100;200;300;400;500&family=Source+Code+Pro:wght@300;400&family=Source+Sans+Pro:ital,wght@0,300;0,400;1,300;1,400&display=swap" rel="stylesheet">
-	<link href="https://fonts.googleapis.com/css2?family=Epilogue:ital,wght@0,200;0,300;0,400;0,500;0,600;1,200;1,300;1,400;1,500;1,600&display=swap" rel="stylesheet">
-	<link href="https://fonts.googleapis.com/css2?family=Inter:wght@200;300;400;500;600;700&display=swap" rel="stylesheet">
+	<link href='//fonts.googleapis.com/css?family=Epilogue|Cormorant' rel='stylesheet' type='text/css'>
 	<!-- Adobe Fonts -->
 	<link rel="stylesheet" href="https://use.typekit.net/iss3bwo.css">
-
-
-
 	<!-- Font Awesome kit code -->
 	<script src="https://kit.fontawesome.com/71ec56e758.js"></script>
 </head>
-<body>
-	<!-- anchor to top of page -->
-	<a id="top"></a>
-	<!-- top bar with "Katie Bumatay" button to home -->
+<body id="body">
+
+	<!-- TOP BAR NAVIGATION -->
 	<nav class="top-bar" id="navbar">
 		<div class="nav-content">
+			<!-- Logo and Home -->
 			<div id="home-button">
-				<a href="#top">
+				<a onclick="topFunction()">
 					<img id="logo" src="KB.svg">
 					Katie Bumatay
 				</a>
 			</div>
+			<!-- Section Nav -->
 			<div class="navigation">
 				<ul>
-					<li><a href="#projects-top">Projects</a></li>
-					<li><a href="about">About</a></li>
+					<li><a href="#projects">Projects</a></li>
+					<li><a href="#about">About</a></li>
 				</ul>
 			</div>
 			
 		</div>
 	</nav>
-	<!-- container for main page content -->
+	<!-- CONTAINER FOR MAIN PAGE CONTENT -->
 	<main>
-		<div class="background-grid-container mobile-hide">
-			<div class="background-grid1">
-				<div class="bg-div"></div>
-				<div class="bg-div"></div>
-			</div>
+		<div class="proj-img-switch-container">
+			<img id="proj-img-switch" src="projects/3/cover.jpg">
 		</div>
-		<!-- Category Section: Portfolio Intro -->
-		<section>
-			<div class="asymmetric-2col show-grid">
-				<div class="bg-div-horiz mobile-hide"></div>
-				<div class="bg-div-horiz-2 mobile-hide"></div>
-				<div class="left-intro-container show-right">
-					<h1 class="tooltip">Katie Bumatay
-						<span class="tooltiptext">&#60;h1&#62;<br>font-family: 'Epilogue'</span>
-					</h1>
-					<hr>
-					<h4 class="tooltip show-top subtitle-1">
-						UX & UI Designer (who codes)
-						<span class="tooltiptext">&#60;h4&#62;<br>font-family: 'Soleil'</span>
-					</h4>
-					<p class="tooltip">
-						<!-- I'm a UX and UI Designer who likes to make things make sense. Well &mdash; make sense in the way that riddles make more and more sense as you uncover each facet of the story.  -->
+		<!-- SECTION: HERO-->
+		<section class="hero-section">
+			<h1 class="hero-header">Katie Bumatay</h1>
+			<div class="asymmetric-2col">
+				<div class="left-intro-container">
+					<p>
+						<!-- I'm a UX/UI Designer who codes.  -->
 						I'm wired to see structure, systems, and patterns in design &mdash; to create precedent, protocol, and constraints, and to know when to thoughtfully break them.
-						<span class="tooltiptext">&#60;p&#62;<br>font-family: 'Soleil'</span>
 					</p>
 				</div>
-				<div class="proj-img-switch-container show-left tooltip">
-					<img id="proj-img-switch" src="projects/3/cover.jpg">
-					<span class="tooltiptext">&#60;a&#62;<br>katiebumatay.com/<span id="tooltip-switch">a-type-of-mosaic</span></span>
-				</div>
+				<h1 class="hero-header-2nd">UX Designer</h1>
 			</div>
 		</section>
 
-		<!-- Category Section: Projects -->
+		<!-- SECTION: PROJECTS -->
 		<section>
-			<div class="asymmetric-2col show-grid">
-				<div class="left-intro-container stick show-right show-bottom">
-					<h2 class="tooltip">Projects
-						<span class="tooltiptext">&#60;h2&#62;<br>font-family: 'Epilogue'</span>
-					</h2>
-					<hr>
-					<!-- Project anchor links -->
-					<ul class="mobile-hide tooltip">
-						<span class="tooltiptext">&#60;ul&#62;&#60;li&#62;&#60;a&#62;<br>font-family: 'Soleil'</span>
-						<li><a href="#and-justice-for-all">and justice for all</a></li>
-						<li><a href="#glitchin-gifs">Glitchin' Gifs</a></li>
-						<li><a href="#a-type-of-mosaic">A Type of Mosaic</a></li>
-						<li><a href="#metamorph-typeface">Metamorph Typeface</a></li>
-						<li><a href="#pleasures-of-the-door">Pleasures of the Door</a></li>
-						<li><a href="#previous-portfolio">Previous Iteration of Portfolio</a></li>
-					</ul>
+			<div class="asymmetric-2col">
+				<div>				
+				</div>
+				<!-- HEADER: Projects -->
+				<div class="anchor" id="projects">
+					<h2>Projects</h2>
+				
+				<!-- PROJECT SECTION: Project 1, and justice for all -->
+				<div class="project-container asymmetric-2col-2nd">
+					<div class="img-container">
+						<img src="projects/1/cover.jpg" alt="and justice for all project cover">
+					</div>
+					<a href="and-justice-for-all"></a>
+					<div class="project-title">				
+								<h3>and justice for all</h3>
+								<h4>Interaction Design</h4>
+					</div>
+					<div class="project-desc">
+						<p>
+							A semester-long capstone project that explores the ways in which given variables (including color, size, typeface, image association, and current or historical references) can influence the perception and tone of a presented subject.
+						</p>
+					</div>
 				</div>
 
-				<!-- Content Section: Project Previews -->
-				<div class="projects anchor show-left" id="projects-top">
-					<!-- Project Section: Project 1, and justice for all -->
-					<div class="project-container">
-						<a href="and-justice-for-all" class="tooltip"><span class="tooltiptext">&#60;a&#62;<br>katiebumatay.com/and-justice-for-all</span></a>
-						<div class="bg-div-horiz mobile-hide"></div>
-						<div class="bg-div-horiz-2 mobile-hide"></div>
-						<div class="img-cap-2row anchor show-bottom" id="and-justice-for-all">
-							<div class="img-container show-bottom">
-								<img src="projects/1/cover.jpg" alt="and justice for all project cover">
-							</div>
-							<div class="even-2col show-top">
-								<div class="project-title show-right">
-									<h3>and justice for all</h3>
-									<h4>Interaction Design</h4>
-								</div>
-								<div class="project-desc show-left">
-									<p>
-									A semester-long capstone project that explores the ways in which given variables (including color, size, typeface, image association, and current or historical references) can influence the perception and tone of a presented subject.
-									</p>
-								</div>
-							</div>
-						</div>
+				<!-- PROJECT SECTION: Project 2, Glitchin' GIFs -->
+				<div class="project-container asymmetric-2col-2nd">
+					<div class="img-container">
+						<img src="projects/2/cover.jpg" alt="Glitchin'Gifs project cover">
 					</div>
+					<a href="glitchin-gifs"></a>
+					<div class="project-title">				
+								<h3>Glitchin' GIFs</h3>
+								<h4>Micro-interaction Design</h4>
+					</div>
+					<div class="project-desc">
+						<p>
+							A colorful, rhythmic, mysterious display of GIFs that encourages the user to interact by resizing the window.
+						</p>
+					</div>
+				</div>
 
-					<!-- Project Section: Project 2, Glitchin' GIFs -->
-					<div class="project-container">
-						<a href="glitchin-gifs" class="tooltip"><span class="tooltiptext">&#60;a&#62;<br>katiebumatay.com/glitchin-gifs</span></a>
-						<div class="bg-div-horiz mobile-hide"></div>
-						<div class="bg-div-horiz-2 mobile-hide"></div>
-						<div class="img-cap-2row anchor show-top show-bottom" id="glitchin-gifs">
-							<div class="img-container show-bottom">
-								<img src="projects/2/cover.jpg" alt="Glitchin'Gifs project cover">
-							</div>
-							<div class="even-2col show-top">
-								<div class="project-title show-right">
-									<h3>Glitchin' Gifs</h3>
-									<h4>Micro-Interaction Design</h4>
-								</div>
-								<div class="project-desc show-left">
-									<p>
-										A colorful, rhythmic, mysterious display of GIFs that encourages the user to interact by resizing the window.
-									</p>
-								</div>
-							</div>
-						</div>
+				<!-- PROJECT SECTION: Project 3, A Type of Mosaic -->
+				<div class="project-container asymmetric-2col-2nd">
+					<div class="img-container">
+						<img src="projects/3/cover.jpg" alt="A Type of Mosaic project cover">
 					</div>
+					<a href="a-type-of-mosaic"></a>
+					<div class="project-title">				
+								<h3>A Type of Mosaic</h3>
+								<h4>Micro-interaction Design</h4>
+					</div>
+					<div class="project-desc">
+						<p>
+							Exploration of scrolling in which letterforms pass through neighboring cropped windows, and combine to create abstract forms.
+						</p>
+					</div>
+				</div>
 
-					<!-- Project Section: Project 3, A Type of Mosaic -->
-					<div class="project-container">
-						<a href="a-type-of-mosaic" class="tooltip"><span class="tooltiptext">&#60;a&#62;<br>katiebumatay.com/a-type-of-mosaic</span></a>
-						<div class="bg-div-horiz mobile-hide"></div>
-						<div class="bg-div-horiz-2 mobile-hide"></div>
-						<div class="img-cap-2row anchor show-top show-bottom" id="a-type-of-mosaic">
-							<div class="img-container show-bottom">
-								<img src="projects/3/cover.jpg" alt="A Type of Mosaic project cover">
-							</div>
-							<div class="even-2col show-top">
-								<div class="project-title show-right">
-									<h3>A Type of Mosaic</h3>
-									<h4>Micro-Interaction Design</h4>
-								</div>
-								<div class="project-desc show-left">
-									<p>
-										Exploration of scrolling in which letterforms pass through neighboring cropped windows, and combine to create abstract forms
-									</p>
-								</div>
-							</div>
-						</div>
+				<!-- PROJECT SECTION: Project 4, Metamorph -->
+				<div class="project-container asymmetric-2col-2nd">
+					<div class="img-container">
+						<img src="projects/4/cover.jpg" alt="Metamorph project cover">
 					</div>
+					<a href="metamorph-typeface"></a>
+					<div class="project-title">				
+								<h3>Metamorph</h3>
+								<h4>Micro-interaction Design</h4>
+					</div>
+					<div class="project-desc">
+						<p>
+							A custom designed and coded variable typeface that serves as a the basis for experimenting with the interaction of mouse events.
+						</p>
+					</div>
+				</div>
 
-					<!-- Project Section: Project 4, Metamorph Typeface -->
-					<div class="project-container">
-						<a href="metamorph-typeface" class="tooltip"><span class="tooltiptext">&#60;a&#62;<br>katiebumatay.com/metamorph-typeface</span></a>
-						<div class="bg-div-horiz mobile-hide"></div>
-						<div class="bg-div-horiz-2 mobile-hide"></div>
-						<div class="img-cap-2row anchor show-top show-bottom" id="metamorph-typeface">
-							<div class="img-container show-bottom">
-								<img src="projects/4/cover.jpg" alt="Metmorph Typeface project cover">
-							</div>
-							<div class="even-2col show-top">
-								<div class="project-title show-right">
-									<h3>Metamorph Typeface</h3>
-									<h4>Micro-Interaction Design</h4>
-								</div>
-								<div class="project-desc show-left">
-									<p>
-										A custom designed and coded variable typeface that serves as a the basis for experimenting with the interaction of mouse events.
-									</p>
-								</div>
-							</div>
-						</div>
+				<!-- PROJECT SECTION: Project 5, Pleasures of the Door -->
+				<div class="project-container asymmetric-2col-2nd">
+					<div class="img-container">
+						<img src="projects/5/cover.jpg" alt="Pleasures of the Door project cover">
 					</div>
-
-					<!-- Project Section: Project 5, Pleasures of the Door -->
-					<div class="project-container">
-						<a href="pleasures-of-the-door" class="tooltip"><span class="tooltiptext">&#60;a&#62;<br>katiebumatay.com/pleasures-of-the-door</span></a>
-						<div class="bg-div-horiz mobile-hide"></div>
-						<div class="bg-div-horiz-2 mobile-hide"></div>
-						<div class="img-cap-2row anchor show-top show-bottom" id="pleasures-of-the-door">
-							<div class="img-container show-bottom">
-								<img src="projects/5/cover.jpg" alt="Pleasures of the Door project cover">
-							</div>
-							<div class="even-2col show-top">
-								<div class="project-title show-right">
-									<h3>Pleasures of the Door</h3>
-									<h4>Book Design</h4>
-								</div>
-								<div class="project-desc show-left">
-									<p>
-										Hand and digitally printed, hand-collaged book designed for the poem, Pleasures of the Door by Frances Ponge, evoking the lack and longing for intimacy.
-									</p>
-								</div>
-							</div>
-						</div>
+					<a href="pleasures-of-the-door"></a>
+					<div class="project-title">				
+								<h3>Pleasures of the Door</h3>
+								<h4>Micro-interaction Design</h4>
 					</div>
-
-					<!-- Project Section: Project 6, Previous Portfolio -->
-					<div class="project-container">
-						<a href="previous" target="blank" class="tooltip"><span class="tooltiptext">&#60;a&#62;<br>katiebumatay.com/previous</span></a>
-						<div class="bg-div-horiz mobile-hide"></div>
-						<div class="bg-div-horiz-2 mobile-hide"></div>
-						<div class="img-cap-2row anchor show-top show-bottom" id="previous-portfolio">
-							<div class="img-container show-bottom">
-								<img src="projects/6/cover.jpg" alt="Previous Portfolio cover image">
-							</div>
-							<div class="even-2col show-top">
-								<div class="project-title show-right">
-									<h3>Previous Portfolio Site</h3>
-									<h4>Web Design & Development</h4>
-								</div>
-								<div class="project-desc show-left">
-									<p>
-										The most recent prior iteration of my portfolio site, which was live from September 2019 to July 2021.
-									</p>
-								</div>
-							</div>
-						</div>
+					<div class="project-desc">
+						<p>
+							Hand and digitally printed, hand-collaged book designed for the poem, Pleasures of the Door by Frances Ponge, evoking the lack and longing for intimacy.
+						</p>
 					</div>
+				</div>
 				</div>
 
 			</div>
 		</section>
+
+		<!-- Category Section: ABOUT -->
+		<section>
+			<div class="asymmetric-2col">
+				<div>				
+				</div>
+				<!-- Content Section: Project Previews -->
+				<div class="anchor" id="about">
+					<h2>About
+					</h2>
+				
+				<!-- WHAT I DO BEST -->
+				<div class="about-container asymmetric-2col-2nd" id="what-i-do">
+					<div class="img-container">
+						<img src="about-images/image1.jpg" alt="image of me" id="about-img">
+					</div>
+					<div class="project-title">				
+								<h3>What I do best</h3>
+					</div>
+					<div class="project-desc">
+						<p>
+							A close second to my life's mantra, "Ice cream is always a good idea," is the equally empowering (but less tasty), "Challenge accepted." You won't find me passing on either.
+						</p>
+						<p>
+							I'm drawn to strategic decision making and decoding or building systems of design. I have an eye for typography, color, and layout, and a mind for interaction, synthesis, and coding. My favorite challenges are at this intersection (bonus points if ice cream is there too).
+						</p>
+					</div>
+				</div>
+
+				<!-- CURRENTLY -->
+				<div class="about-container asymmetric-2col-2nd">
+					<div class="project-title">				
+								<h3>Currently</h3>
+					</div>
+					<div class="project-desc">
+						<p>
+							Based in Seattle, WA<br>
+							UX Designer at <a href="https://www.icscreative.com/">Image Conscious Studios</a>
+						</p>
+					</div>
+				</div>
+
+				<!-- LINKS -->
+				<div class="about-container asymmetric-2col-2nd">
+					<div class="project-title">				
+								<h3>Get in touch</h3>
+					</div>
+					<div class="project-desc">
+						<p>
+							<a href="https://drive.google.com/file/d/1EzzfhEdrMtmyjMZFxxX4hiUD0Jpwdb4u/view?usp=sharing" target="_blank">View and Download Resume</a></br>
+							<a href="mailto: bumatay.katie@gmail.com">bumatay.katie@gmail.com</a>
+						</p>
+						<p>
+							<a class="social" href="https://github.com/katiebumatay" target="_blank"><i class="fab fa-github"></i></a>
+							<a class="social" href="https://www.linkedin.com/in/katie-bumatay-03028613b/" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+							<a class="social" href="https://www.instagram.com/katiebumatay/?hl=en" target="_blank"><i class="fab fa-instagram"></i></a>
+						</p>
+					</div>
+				</div>
+
+
 
 	</main>
 
 	<!-- My JS -->
 	<script src="scripts/script.js"></script>
 
+	<!-- Jquery -->
 	<script src="https://code.jquery.com/jquery-1.12.4.js"></script>
-  <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+	<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
 
 
 </body>
