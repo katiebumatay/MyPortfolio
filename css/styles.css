@@ -187,8 +187,10 @@ a:hover {
 }
 
 .project-container:hover h3:after {
-	float: right;
-	margin: 4px 0 0 6px;
+	position: relative;
+	display: inline-block;
+	top: 4px;
+	right: -6px;
 	content: ' ';
 	background-image: url('../arrow-blue.svg');
 	background-size: 20px 20px;
@@ -638,6 +640,10 @@ img {
 
 	.project-desc {
 		padding-left: 20px;
+	}
+
+	.project-container:hover h3:after {
+		display: none;
 	}
 	
  	/*** Mobile Landscape Text Styles ***/
