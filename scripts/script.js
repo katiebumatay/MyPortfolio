@@ -29,7 +29,7 @@ if (window.innerWidth <= 480) {
 
 // randomly select project to display when page loads
 function setProj() {
-		proj = Math.floor(Math.random() * 5) + 1;
+		proj = Math.floor(Math.random() * 3) + 1;
 		projChoice = "projects/" + proj + "/cover-bw.jpg";
 		setProjLink();
     	$("#proj-img-switch").attr("src", projChoice);
