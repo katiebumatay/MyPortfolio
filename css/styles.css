@@ -39,8 +39,8 @@ main {
 body {
 	font-family: var(--text-soleil);
 	font-weight: 400;
-	font-size: 13px;
-	line-height: 21px;
+	font-size: 15px;
+	line-height: 23px;
 }
 
 h1, h2, h3, h4 {
@@ -67,8 +67,8 @@ h1, h2, h3, h4 {
 
 .header_style3 {
 	font-family: var(--text-soleil);
-	font-size: 20px;
-	line-height: 26px;
+	font-size: 24px;
+	line-height: 30px;
 	font-weight: 300;
 	letter-spacing: -0.01em;
 	margin-bottom: 0.15em;
@@ -77,8 +77,8 @@ h1, h2, h3, h4 {
 .header_style4 {
 	margin-bottom: 12px;
 	font-family: var(--text-cormorant);
-	font-size: 16px;
-	line-height: 20px;
+	font-size: 18px;
+	line-height: 21px;
 	font-weight: 400;
 	font-style: italic;
 }
@@ -88,7 +88,9 @@ p {
 }
 
 .hero-header {
+	font-family: var(--text-normalidad-c);
 	font-size: 128px;
+	font-weight: 500;
 	line-height: 1em;
 	text-transform: none;
 	letter-spacing: -0.01em;
@@ -280,7 +282,7 @@ hr {
 
 .project-container, .about-container {
 	position: relative;
-	padding: 20px 0px 10px 0px;
+	padding: 28px 0px 20px 0px;
 	border-top: solid 1px var(--light-color-rgba);
 }
 
@@ -348,14 +350,14 @@ img {
 .top-bar {
 	font-family: var(--text-normalidad-t);
 	text-transform: uppercase;
-	font-size: 12px;
+	font-size: 14px;
 	letter-spacing: .12em;
 	font-weight: 400;
 	position: fixed;
 	top:0;
 	left: 0;
 	width: 100%;
-	height: 48px;
+	height: 56px;
 	/* background-color: var(--main-bg-color); */
 	z-index: 999;
 	transition: 0.7s ease;
@@ -367,7 +369,7 @@ img {
 	position: relative;
 	width: 84%;
 	max-width: 1204px;
-	height: 48px;
+	height: 56px;
 	margin: auto;
 }
 
@@ -395,7 +397,7 @@ img {
 }
 
 .navigation li {
-	height: 48px;
+	height: 56px;
 	float: left;
 	padding: 0px 18px;
 	border-right: 1px solid var(--color-mid);
@@ -556,23 +558,23 @@ img {
 
 	/*** Tablet Text Styles ***/
 	body {
-		font-size: 12px;
-		line-height: 18px;
+		font-size: 14px;
+		line-height: 21px;
 	}
 
-	h2 {
+	.header_style2 {
 		font-size: 28px;
 		line-height: 32px;
 	}
 	
-	h3 {
-		font-size: 18px;
-		line-height: 23px;
+	.header_style3 {
+		font-size: 20px;
+		line-height: 24px;
 	}
 	
-	h4 {
-		font-size: 15px;
-		line-height: 20px;
+	.header_style4 {
+		font-size: 16px;
+		line-height: 22px;
 	}
 
 	.hero-header {
@@ -640,7 +642,7 @@ img {
 	}
 
 	.project-desc {
-		padding-left: 20px;
+		padding-left: 24px;
 	}
 
 	.project-container:hover h3:after {
@@ -648,17 +650,15 @@ img {
 	}
 	
  	/*** Mobile Landscape Text Styles ***/
-	h3 {
-		font-size: 16px;
-		line-height: 20px;
+	.header_style2 {
+		font-size: 22px;
+		line-height: 24px;
+	}
+	.header_style3 {
+		font-size: 18px;
+		line-height: 21px;
 	}
 	
-	h4 {
-		font-size: 14px;
-		line-height: 20px;
-		font-weight: 500;
-	}
-
 	.hero-header {
 		font-size: 64px;
 		line-height: 68px;
@@ -719,32 +719,15 @@ img {
 	}
 
 	/*** Mobile Portrait Text Styles ***/
-	h2 {
-		font-size: 22px;
-		line-height: 24px;
-	}
-	h3 {
-		font-size: 16px;
-		line-height: 22px;
-		margin: 0;
-	}
-	
-	h4 {
-		font-size: 14px;
-		line-height: 20px;
-		font-weight: 500;
-		margin: 0;
-	}
-
 	.hero-header {
-		font-size: 42px;
-		line-height: 44px;
+		font-size: 46px;
+		line-height: 46px;
 		margin-left: 0;
 	}
 
 	.hero-header-2nd {
-		font-size: 44px;
-		line-height: 44px;
+		font-size: 48px;
+		line-height: 48px;
 		margin-left: 0;
 		/* text-align: right; */
 	}
