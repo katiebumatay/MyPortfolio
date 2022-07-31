@@ -20,7 +20,7 @@ html, body{
 	padding-top: 60px;
 	cursor: default;
 	color: var(--main-dark-color);
-	/* background-color: var(--main-bg-color); */
+	background-color: var(--main-bg-color);
 	scroll-behavior: smooth;
 }
 
