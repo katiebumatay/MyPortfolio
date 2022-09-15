@@ -454,7 +454,7 @@ img {
 }
 
 .hero-header {
-	animation: 1.5s ease-out 0s 1 nameSlideIn;
+	animation: 1s ease-out 0s 1 nameSlideIn;
 }
 
 @keyframes titleSlideIn {
@@ -473,7 +473,7 @@ img {
 }
 
 .hero-header-2nd {
-	animation: 1.5s ease-out 0s 1 titleSlideIn;
+	animation: 1s ease-out 0s 1 titleSlideIn;
 }
 
 
@@ -482,7 +482,7 @@ img {
 		transform: translateY(50px);
 		opacity: 0;
 	}
-	40% {
+	30% {
 		transform: translateY(50px);
 		opacity: 0;
 	}
@@ -497,7 +497,7 @@ img {
 		transform: translateY(-50px);
 		opacity: 0;
 	}
-	40% {
+	30% {
 		transform: translateY(-50px);
 		opacity: 0;
 	}
@@ -508,12 +508,12 @@ img {
 }
 
 .top-bar {
-	animation: 2s ease-out 0s 1 navSlideIn;
+	animation: 1.5s ease-out 0s 1 navSlideIn;
 }
 
 .left-intro-container {
 	margin-top: 12px;
-	animation: 2s ease-out 0s 1 introSlideIn;
+	animation: 1.5s ease-out 0s 1 introSlideIn;
 }
 
 @keyframes projectSlideIn {
@@ -532,7 +532,7 @@ img {
 }
 
 #projects, #skills, #about, #contributions {
-	animation: 3s ease-out 0s 1 projectSlideIn;
+	animation: 1.5s ease-out 0s 1 projectSlideIn;
 }
 
 /*************************************/
