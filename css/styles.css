@@ -531,7 +531,7 @@ img {
 	}
 }
 
-#projects, #skills, #about, #contributions {
+#projects, #skills, #about, #contributions, #webdev {
 	animation: 1.5s ease-out 0s 1 projectSlideIn;
 }
 
